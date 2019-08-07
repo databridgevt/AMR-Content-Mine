@@ -6,6 +6,9 @@ import sys
 import copy
 import json
 import datetime
+import keras
+
+pdfDirectoryPath = "AmsContainer"
 
 ##########################################
 # Data Mining and Collection
@@ -102,8 +105,6 @@ for line in file:
     if len(line) > 1:
         line = line[:-1]
     ignoredWords.append(line)
-
-path1 = "AmsContainer-titles/"
 
 
 def time():
@@ -264,8 +265,8 @@ def updateData(pmcId):
                         data["termCounts"][firstWord] -= 1
                     # if (not articleTitleAdded):
                     if (True):
-                        global path1
-                        jsonPath = path1 + pmcId + "/eupmc_result.json"
+                        global pdfDirectoryPath
+                        jsonPath = pdfDirectoryPath + pmcId + "/eupmc_result.json"
                         with open(jsonPath) as json_file:
                             jsonData = json.load(json_file)
                             year = str(jsonData["journalInfo"][0]["printPublicationDate"][0]).lower().split("-")[0]
@@ -293,12 +294,12 @@ def updateData(pmcId):
 
 pdfNum = 0
 print("Number of Articles = " +
-      str(len(os.listdir(path1)) - 1) + " (" + time() + ")\n")
+      str(len(os.listdir(pdfDirectoryPath)) - 1) + " (" + time() + ")\n")
 test = True
-for name in os.listdir(path1):
+for name in os.listdir(pdfDirectoryPath):
     if "eupmc" in name or ".DS_Store" == name:
         continue
-    pdfPath = path1 + name + "/fulltext.pdf"
+    pdfPath = pdfDirectoryPath + name + "/fulltext.pdf"
     # if test == True:
     #     print("name = " + pdfPath)
     #     test == False
