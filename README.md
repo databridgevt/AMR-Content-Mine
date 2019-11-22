@@ -1,5 +1,9 @@
 # AMR-Content-Mine
 
+## Note:
+This version was last pushed Aug. 07. Master branch currently contains the most recent version of the AMR-Content-Mine
+
+
 ## Basic Usage
 1. Download articles using the two following content mine commands:
   ```
