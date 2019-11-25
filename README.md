@@ -18,7 +18,7 @@ To check if you have Node.js installed on your computer, run:
 which node
 ```
 
-If Node.js is installed, then a path should be printed. If Node.js in not installed here's a link to [Node.js's download page](https://nodejs.org/en/download/). Good Luck, Have Fun.
+If Node.js is installed, then a path should be printed. If Node.js is not installed, here's a link to [Node.js's download page](https://nodejs.org/en/download/). Good Luck, Have Fun.
 
 #### 2. Install `getpapers`
 
