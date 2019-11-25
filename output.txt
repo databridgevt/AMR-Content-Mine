@@ -1,0 +1,1379 @@
+BMC Pharmacology
+
+BioMed Central
+
+BMC Pharmacology
+ 2002, 
+Research article
+2
+The farnesyl transferase inhibitor RPR-130401 does not alter 
+radiation susceptibility in human tumor cells with a K-Ras mutation 
+in spite of large changes in ploidy and lamin B distribution
+Frédérique Mégnin-Chanet*1, François Lavelle2 and Vincent Favaudon1
+
+x
+
+Address: 1U 350 INSERM, Institut Curie-Recherche, Centre Universitaire, 91405 ORSAY, France and 2Centre de Recherche Rhône-Poulenc Rorer, 
+94403 VITRY-SUR-SEINE, France
+
+E-mail: Frédérique Mégnin-Chanet* - frederique.megnin@curie.u-psud.fr; François Lavelle - francois.lavelle@wanadoo.fr; 
+Vincent Favaudon - vincent.favaudon@curie.u-psud.fr
+*Corresponding author
+
+Published: 6 February 2002
+
+BMC Pharmacology 2002, 2:2
+
+Received: 2 October 2001
+Accepted: 6 February 2002
+
+This article is available from: http://www.biomedcentral.com/1471-2210/2/2
+
+© 2002 Mégnin-Chanet et al; licensee BioMed Central Ltd. Verbatim copying and redistribution of this article are permitted in any medium for any purpose, 
+provided this notice is preserved along with the article's original URL.
+
+Abstract
+Background:  Growth  inhibition  by  RPR-130401,  a  non-peptidomimetic  farnesyltransferase
+inhibitor, was investigated without or with combined exposure to ionizing radiation in three human
+tumor cell lines (HCT-116, MiAPaCa-2 and A-549) bearing a point mutation in the K-Ras gene.
+Results: RPR-130401 inhibited cell growth with an IC50 of 50 nM (HCT-116), 120 nM (MiAPaCa-
+2) and 710 nM (A-549), with a poor incidence of apoptosis. The drug brought about G1 and S phase
+depletion  together  with  arrest  of  cells  in  G2  phase  and  induced  a  significant  accumulation  of
+hyperploid cells showing active S phase DNA synthesis, with HCT-116 and A-549 cells being the
+most and least responsive, respectively. The drug also produced dramatic changes of the nuclear
+lamin B pattern, without lamin B cleavage and perturbation of the actin cytoskeleton. On the other
+hand,  RPR-130401  elicited  strictly  additive  interaction  in  combined  treatment  with  ionizing
+radiation with regard to cell kill, altered cell cycle progression and induced hyperploidy.
+Conclusions:  The  data  suggest  that  disruption  of  orderly  progression  through  mitosis  and
+cytokinesis, is a major outcome of drug action and that this effect proceeds from inhibition of lamin
+B farnesylation. It is anticipated from the strict additivity of RPR-130401 and radiation that neither
+induced  radiation  resistance  nor  acute  or  late  complications  of  radiotherapy,  should  occur  in
+combined treatment with RPR-130401.
+
+Background
+For over ten years chemo-radiotherapeutic combinations
+have evolved as prevalent modalities in the cure of solid
+tumors.  The  rationale  for  these  treatments  relies  mostly
+on the drugs' ability to sterilize disseminated metastases
+(spatial  cooperation)  and  on  radiation-drug  interaction
+for improved local control of the primary tumor. Supraad-
+ditive interaction, often resulting from impaired repair of
+
+radiation-induced sublethal damage, may lead to limiting
+toxicities.  In  contrast,  pure  additivity  of  the  treatments
+may conceivably be turned to advantage because the dose-
+dependent response of cells to radiation includes a quad-
+ratic  term.  This  is  of  concern,  for  example,  to  farnesyl
+transferase  inhibitors  (FTIs)  of  which  six  have  already
+been tested in phase I clinical trials [1,2] with most atten-
+tion being paid to the non-peptidomimetic R115777 [3–
+
+Page 1 of 14
+(page number not for citation purposes)
+
+BMC Pharmacology 2002, 2
+
+http://www.biomedcentral.com/1471-2210/2/2
+
+5]. As one may expect a cytostatic rather than a cytotoxic
+effect from FTIs, assays of combined modality treatment
+with cytotoxic agents applied in close temporal proximity
+should be performed. This prompted us to investigate the
+cells' response to RPR-130401 (Scheme 1), a non-peptid-
+omimetic FTI issued from chemical optimization from se-
+ries selected by random screening at Rhône-Poulenc-Rorer
+Co.  [6],  both  alone  or  in  concomitant  association  with
+ionizing radiation.
+
+A comprehensive approach to these problems requires an
+insight into the molecular targets of drug action. Together
+with  mutation  or  deletion  of  the  p53  tumor  suppressor
+gene, mutations in one of the four Ras genes (H-, N-, KA-
+and  KB-Ras)  represent  the  most  frequent  genetic  altera-
+tions in human cancers [7] with predominance in pancre-
+atic (90%), colorectal (50%) and lung (20%) tumors (for
+a review on ras mutations in relation to oncogenic trans-
+formation see [2]). Activation of Ras proteins requires pre-
+nylation  of  the  CAAX  sequence  at  their  C-terminus,  to
+ultimately permit their association with other proteins [8]
+or with the inner face of the plasma membrane [9]. A key
+step  in  this  process  is  catalyzed  by  farnesyltransferase
+(FTase). The K-Ras protein can alternatively be prenylated
+by type I geranylgeranyltransferase (GGTase  I),  a closely
+related enzyme [10].
+
+FTase has been a very attractive target for antitumor drug
+discovery  because  prenylation  is  required  for  oncogenic
+Ras to transform cells [11–13]. Numerous inhibitors have
+been  developed,  including  FPP  analogs,  CAAX  peptide
+analogs,  bisubstrate  analogs  [14,15]  and  more  recently
+GGTase I inhibitors [16]. However, it is now known that
+a  range  of  non-Ras  proteins  are  targets  for  prenylation
+[17–19]. In spite of this, the quest for specific FTase-target-
+ing drugs that would not affect GGTase is still pertinent,
+because geranylgeranylation of normal cellular proteins is
+five  to  ten  times  more  prevalent  than  farnesylation
+[20,21].
+
+RPR-130401  acts  as  a  competitive  inhibitor  of  the  FPP
+substrate with respect to the farnesylated proteins, with an
+IC50 of 28 nM for the inhibition of K-Ras prenylation in
+vitro[6], and has demonstrated in vivo antitumor activity in
+mice  bearing  human  carcinoma  xenografts  [22].  RPR-
+130401 is highly selective (more than 300-fold) for FTase
+with  regards  to GGTase, an  unexpected result  since GG-
+Tase can accommodate and transfer both FPP and geran-
+ylgeranyl pyrophosphate to CAAX-motifs in proteins [23].
+Consistently,  RPR-130401  efficiently  inhibits  Ras  far-
+nesylation  in  cells  but  does  not  block  geranylgeranyl
+transfer to Ras [24]. RPR-130401 is also very efficient in
+inhibiting lamin B farnesylation [6]. The lack of protein
+substrate specificity is of particular interest for the devel-
+opment of this series of FTIs, as non-Ras farnesylated pro-
+
+teins may participate in transformation by Ras-dependent
+or -independent pathways. The discovery of prenylation-
+dependent oncogenic protein tyrosine phosphatases har-
+boring a CAAX-box [25] strengthens the interest for such
+FTIs as RPR-130401.
+
+For  studies  with  RPR-130401  we  chose  three  cell  lines
+bearing a K-Ras allele with a point mutation, namely, the
+human colon adenocarcinoma HCT-116 with mutation at
+codon  13  [26],  the  human  pancreatic  carcinoma  MiA-
+PaCa-2 with mutation at codon 12 [27], and the human
+lung carcinoma A-549 with another mutation at codon 12
+[28]. Cell growth or survival, cell cycle progression, ploi-
+dy,  lamin  B  structure  in  nuclear  lamina,  cytoskeleton
+framework, and lamin B fragmentation were taken as an
+endpoint in single or combined treatment with ionizing
+radiation. The data show that RPR-130401 affects the in-
+tegrity of the lamin B network, resulting in an aberrant on-
+set  of  mitosis  and  cytokinesis  and  ensuing  hyperploidy
+without significant changes in radiation susceptibility.
+
+Results
+Growth inhibition by RPR-130401
+The response of HCT-116, A-549 and MiAPaCa-2 cells to
+RPR-130401 was investigated through growth inhibition
+assays with exponentially growing subcultures. Cells were
+exposed to the drug for up to 7-days at concentrations in
+the range 2.5–7,000 nM. RPR-130401 was found to inhib-
+it cell growth with an IC50 of 50 nM for HCT-116, 120 nM
+for MiAPaCa-2 and 710 nM for A-549 cells. The effect cor-
+related with a pronounced lengthening of the cells' dou-
+bling time (Figure 2).
+
+Scheme 1
+Chemical Structure of RPR-130401
+
+Page 2 of 14
+(page number not for citation purposes)
+
+BMC Pharmacology 2002, 2
+
+http://www.biomedcentral.com/1471-2210/2/2
+
+Figure 2
+Growth inhibition by RPR-130401 in asynchronously growing HCT-116, A-549 and MiAPaCa-2 cells. Mid-log phase cells were
+seeded (2 × 105 cells in 25 cm2 flasks) and incubated for 24-h prior to introduction of RPR-130401. The drug was present for
+up  to  the time  of  trypsinization  and  cell  scoring.  RPR-130401 induced  a pronounced  lengthening  of  the cell  doubling  time,
+namely, for HCT-116 cells, 23-h (50 nM drug = 1 × IC50) or 30-h (500 nM drug) vs. 18-h in drug-free controls; for A-549 cells,
+30-h (0.71 µM drug = 1 × IC50) or 35-h (7.1 µM drug) vs. 22-h in drug-free controls; for MiAPaCa- 2 cells, 35-h (0.12 µM drug
+= 1 × IC50) or 40-h (1.2 µM drug) vs. 23-h in drug-free controls.
+
+Page 3 of 14
+(page number not for citation purposes)
+
+BMC Pharmacology 2002, 2
+
+http://www.biomedcentral.com/1471-2210/2/2
+
+Altered cell cycle progression by RPR-130401 and radia-
+tion
+To  investigate  cell  cycle  redistribution  by  RPR-130401,
+HCT-116, MiAPaCa-2 and A-549 cells were exposed for 5-
+days to 1 × IC50 or 10 × IC50 FTI (relative to the cell line
+of interest) and submitted or not to γ-rays 24-h before har-
+vest. BrdUrd was incorporated at the end of treatment for
+S-phase cell labeling. The three cell lines were not equally
+responsive to drug (Figure 3). RPR-130401 induced accu-
+mulation of HCT-116 cells in G2-M phase, with a concen-
+tration-dependent  increase  in  the  ploidy  number  and  a
+decline  in  the  normodiploid  G1-  and  S-phase  content.
+These observations correlate those made by other authors
+using Ras-mutated human pancreatic cells and L-744,832
+[29] or human lung cancer cells and FTI-2153 [30]. MiA-
+PaCa-2 cells showed a similar response at low (1 × IC50)
+drug concentration. However, with this cell line both the
+G1  phase  depletion  and  the  increase  in  the  ploidy
+number, were substantially less pronounced at high (10 ×
+IC50) than at low (1 × IC50) drug concentration. Finally,
+with the exception of the pre-mitotic arrest, the effect of
+RPR-130401 on cell cycle progression and ploidy change
+was comparatively minor in A-549 cells. Irradiation pro-
+moted drug-induced effects. Incidentally, flow cytometric
+analysis did not provide evidence of a significant amount
+of the sub-G1 DNA fragments expected from apoptosis.
+
+Radiation survival in the presence of RPR-130401
+Two  methods  were  used  to  determine  whether  RPR-
+130401  resulted  or  not  in  an  altered  radiation  survival.
+For  lengths  of  drug  exposure  in  excess  of  12-h  (1-  to  5-
+days),  cells  were  trypsinized  and  plated  following  treat-
+ment to  preclude  artifacts  due  to  cell multiplicity. Short
+contact with drug (1-, 2-, 3- or 12-h) was performed in the
+most sensitive cell line only, i.e., in HCT-116 cells. In that
+case, cells were plated prior to treatment and the data cor-
+rected for changes in cell multiplicity (see Materials and
+Methods)  where  necessary.  A  total  of  78  survival  curves
+were  generated  and  fitted  to  eq.  (2)  (see  Materials  and
+Methods)  for  data  analysis.  Irrespective  of  the  method
+used,  exposure  of  cells  to  RPR-130401  did  not  produce
+any significant modification of radiation sensitivity rela-
+tive to controls, even with the largest drug concentration
+and the longest length of drug exposure (Figure 4).
+
+Effects of RPR-130401 on lamin B distribution
+Altered distribution of lamin B following exposure to the
+FTI was investigated in  HCT-116,  A-549 and MiaPaCa-2
+cells. Cells were exposed for 5-days to 1 × IC50 or 10 × IC50
+RPR-103401, submitted or not to γ-rays 24-h before har-
+vest  and  lamin  B  was  subsequently  probed  by  immun-
+ofluorescence. Typical results are shown in Figure 5.
+
+Control cells (Figure 5A,5D & 5G) showed a nuclear dis-
+tribution of lamin B with localization to the nuclear lam-
+
+Page 4 of 14
+(page number not for citation purposes)
+
+Figure 3
+Effect  of  RPR-130401  on  cell  cycle  progression.  Cells  were
+grown for a total of 5-days without or with 1 × IC50 or 10 ×
+IC50 RPR-130401. At day 4, part of samples was irradiated to
+the dose indicated and allowed to rest in the incubator for an
+additional  24-h  prior  to  harvest.  The  DNA  content  was
+determined  from  flow  cytometric  analysis  of  propidium
+iodide  staining  and  BrdUrd  incorporation.  104  nuclei  were
+analysed for each sample. 2C, 4C and 8C, diploid, tetraploid
+and  octoploid  cells.  Sq,  quiescent  (arrested  in  synthesis)  S-
+phase cells.
+
+BMC Pharmacology 2002, 2
+
+http://www.biomedcentral.com/1471-2210/2/2
+
+Figure 4
+Typical radiation survival curves for asynchronous growing cells without (•) or with exposure to 1 × IC50 (䊊) or 10 × IC50 (䊐)
+RPR-130401. Cells were plated, exposed to the drug for 3-days and irradiated. Each flask was trypsinized immediately after
+irradiation and 800 to 1,000 cells were replated in drug-free medium for colony formation assays. To account for the loss of
+plating efficiency du to drug exposure, survival values were normalized relative to the surviving fraction for drug alone. The
+curves were drawn for best fit to a linear quadratic equation (eq. (2), see Materials and Method) taking all data points into con-
+sideration. Found: α = 0.518 ± 0.036 Gy-1, β = 0.044 ± 0.016 Gy-2 for HCT-116 cells; α = 0.193 ± 0.036 Gy-1, β = 0.065 ±
+0.014 Gy-2 for A-549 cells; α = 0.189 ± 0.058 Gy-1, β = 0.086 ± 0.026 Gy-2 for MiAPaCa-2 cells. Each data point came from an
+average over three flasks or more. Bars, SD. The figure at bottom right shows the surviving fraction at 2 Gy (SF2) of HCT-116
+cells in the presence of RPR-130401.  The conditions  were  the  same  as  above. Data  were corrected for  the expression of
+potentially lethal damage [82].
+
+ina  as  indicated  by  a  ring-like  staining  at  the  nuclear
+periphery. During mitosis the lamin was either cytoplas-
+mic (Figure 5D) or poorly detectable (Figure 5G,5H). The
+pattern of lamin B distribution was markedly altered fol-
+lowing  incubation  with  RPR-130401,  depending  on  the
+cell  line.  For  HCT-116  (Figure  5B,5C)  and  A-549  cells
+(Figure 5E,5F), the lamin B staining was still nuclear with
+the characteristic ring-like structure but, in addition to gi-
+ant  nuclei  typical  of  treated  HCT-116  cells  (Figure  5C),
+cell  doublets  with  no  proper  separation  of the  daugther
+nuclei  after  telophase  were  observed  (Figure  5F).  MiA-
+PaCa-2  cells  showed  a  different  pattern  in  response  to
+RPR-130401  (Figure  5H,5H’).  With  these  cells,  lamin  B
+
+was not strictly confined in the nucleus as indicated by cy-
+toplasmic  patches  (Figure  5H).  Examination  of  DAPI-
+stained  nuclei  confirmed  the  absence  of  DNA  in  these
+patches (Figure 5H’). Lamin B figures were not apprecia-
+bly modified by exposure to ionizing radiation; however,
+radiation  induced  the  formation  of  micronuclei  in  rela-
+tion to mitotic cell death (data not shown).
+
+Effects of RPR-130401 on actin and tubulin networks in 
+HCT-116 cells
+Some FTIs reportedly affect the actin cytoskeleton via the
+Rho  (a  Ras-related  GTP-binding  protein)  pathway  [31]
+and Rho-B, an endosomal Rho protein involved in recep-
+
+Page 5 of 14
+(page number not for citation purposes)
+
+BMC Pharmacology 2002, 2
+
+http://www.biomedcentral.com/1471-2210/2/2
+
+Figure 5
+Immunofluorescent detection of lamin B in control (A, D, G) and treated (B, C, E, F, H, H') HCT-116 (B, C), A-549 (E, F) and
+MiAPaCa-2 cells (H, H'). Cells were grown on coverslips for 5-days without or with 1 × IC50 (B, E, H, H') or 10 × IC50 (C, F)
+RPR-130401. Cells were then fixed and incubated with an anti-lamin B monoclonal antibody, then with an Alexa®-conjugated
+secondary antibody. To visualize nuclei, the cells were counter-stained with DAPI (H'). Cells were viewed on a Zeiss micro-
+scope and photographed with Ilford HP-5 film. m, mitosis; p, cytoplasmic patches. The bar (B) represents 20 µm.
+
+tor trafficking,  has  recently  been  suggested  as an impor-
+tant  mediator  of  the  antineoplastic  potential  of  FTIs
+[19,32]. We therefore sought to investigate the effects of
+50 nM or 500 nM RPR-130401 on the distribution of actin
+and tubulin networks in HCT-116-cells exposed to RPR-
+130401  and/or  radiation.  Pictures  obtained  using  rhod-
+amine-phalloidin and immunofluorescent labeling of iso-
+thiocyanate-conjugated  tubulin  in  control  and  treated
+cells, are shown in Figure 6.
+
+L-739,749, another FTI, was earlier shown to induce rapid
+morphological  reversion  of  rat  fibroblasts  (Rat1-ras)
+transformed  with H-ras [33].  Such phenotypic reversion
+
+was  not  observed  using  RPR-130401  in  HCT-116  cells.
+Normal membrane ruffles, circumferential actin bundles
+and focal adhesions as seen in control HCT-116 cells (Fig-
+ure 6A), were still present in cells incubated for as long as
+5-days  in  the  presence  of  RPR-130401  (Figure  6B).  The
+size  of the nuclei and  the  number  of giant  cells  grew  in
+parallel in the presence of the drug, up to threefold rela-
+tive to controls. The stress fibers and the tubulin network
+were normal in these cells (Figure 6B & 6D). Examination
+of bisbenzimide-stained nuclei showed the absence of ap-
+optotic  bodies  (Figure  6A’,6B’),  and  no  vesicles  were
+formed in the cytoplasm of treated cells.
+
+Page 6 of 14
+(page number not for citation purposes)
+
+BMC Pharmacology 2002, 2
+
+http://www.biomedcentral.com/1471-2210/2/2
+
+Figure 6
+Immunofluorescent visualization of cytoskeleton components in control (A, A', C) and treated (B, B', D) HCT-116 cells. Cells
+were grown on coverslips for 5-days without or with 500 nM RPR-130401. The cells were subsequently given 3.5 Gy γ-rays
+and allowed to rest in the incubator for 24-h. Cells were then fixed and incubated with TRITC-labeled phalloidin (A, B), or with
+an anti-α tubulin FTIC-conjugated antibody (C, D). Nuclei were counter-stained with bisbenzimide (A', B'). Cells were viewed
+as in Figure 5. The bar (C) represents 20 µm.
+
+RPR-130401-induced modification of the HCT-116 karyo-
+type
+Activation  of  Ha-ras  gene  expression  in  mouse  NIH3T3
+cells is known to result in genomic instability, identified
+from  chromosome  aberrations  including  acentric  frag-
+ments,  multicentric  and  double-minute  chromosomes
+[34,35]. We therefore investigated the effects of 50 nM or
+500 nM RPR-130401 on the ploidy and chromosome in-
+tegrity  in  HCT-116-cells  exposed  to  RPR-130401  and/or
+radiation. Figure 7 shows the distribution of the chromo-
+some  score  within  individual  metaphases  of  colcemid-
+treated cells after 1-day of contact with RPR-130401. Con-
+trol cells showed a near-diploid karyotype with a modal
+number  of chromosomes  of  45.  Excess ploidy increased
+with the drug concentration,  the  radiation  dose and  the
+length of drug exposure. The mitotic index decreased dur-
+ing treatment (data not shown), thus confirming that the
+accumulation of HCT-116 cells was in the G2 phase.
+
+However,  no  chromosome  aberration  was  seen  at  this
+stage  using  FISH  analysis  with  all  human  centromeres
+probes.  All  chromosomes  in  the  metaphases  examined
+displayed  one  unique  centromere,  even  in  metaphases
+containing up to 200 chromosomes (data not shown).
+
+Western blot analysis of lamin B in treated cells
+Flow cytometry (Figure 3) and DAPI fluorescence of nu-
+clei (Figure 5),  did not provide evidence of a significant
+level  of  apoptosis  in  cells  exposed  to  RPR-130401.  In
+some instances, however, the pictures obtained from im-
+munofluorescence analysis of the lamin B status in cells ex-
+posed for 5-days to RPR-130401, suggested breakdown of
+nuclear lamina, and it has been shown recently that inhi-
+bition  of  protein  prenylation  may  cause  apoptotic  cell
+death in pancreatic cells [36]. As lamin B cleavage into 46
+kDa  fragments  is  a  hallmark  of  apoptosis  [37],  we  per-
+formed a Western blot determination of lamin B in extracts
+from HCT-116, A-549 and MiAPaCa-2 cells exposed for 5-
+days to 10 × IC50 RPR-130401. The results (Figure 8) un-
+ambiguously show complete absence of lamin B cleavage.
+
+Discussion
+The main effects  of RPR-130401  against the three  K-Ras
+mutated  cell  lines  used  in  this  study  were  (i)  a  pro-
+nounced cytostatic effect, with an IC50 in the range 50–
+710 nM; (ii) accumulation of cells in G2 phase, with G1
+and S phase depletion; (iii) induction of a large amount
+of  hyperploid cells  (HCT-116 and  MiAPaCa-2) showing
+active  S-phase  DNA  synthesis,  together  with  some  giant
+cells; (iv) profound alteration of the lamin B pattern, with-
+out cleavage of the protein; (v) no alteration of the micro-
+
+Page 7 of 14
+(page number not for citation purposes)
+
+BMC Pharmacology 2002, 2
+
+http://www.biomedcentral.com/1471-2210/2/2
+
+Figure 7
+Effect of RPR-130401 exposure on the chromosome number distribution in individual metaphases. HCT-116 cells were grown
+for 4-days without (A, B) or with 50 nM (C, D) or 500 nM (E, F) RPR-130401. Cells were then given 3.5 Gy γ-rays (B, D, F) and
+returned to the incubator for 24-h prior to fixation and scoring. Each panel represents the counts from at least 50 metaphases.
+
+tubule  and  actin  networks,  even  after  prolonged
+incubation  with  a  high  drug  concentration  in  the  most
+sensitive cell line (500 nM, HCT-116 cells); (vi) strictly ad-
+ditive  interaction  with  ionizing  radiation  with  regard  to
+cell kill, cell cycle redistribution and induction of hyper-
+ploidy.
+
+Two alternative pathways should be taken into considera-
+tion in order to explain these observations, namely, inhi-
+bition  of  the  farnesylation  of  p21Ras  or  related  proteins
+from the Ras superfamily, or inhibition of the farnesyla-
+tion of other proteins resulting in disruption of the mitot-
+ic apparatus or cytokinesis traverse. These hypotheses are
+discussed below.
+
+p21Ras activation in normal and tumor cells is mandatory
+to  the  transition  from  cell  quiescence  to  proliferation.
+However, it is generally agreed that inhibition of p21Ras
+farnesylation  does  not  suppress  mitogenic  functions  in
+Ras-transformed cells [38]. Moreover, it has recently been
+shown that growth inhibition by FTIs does not necessarily
+proceed from inhibition of p21Ras prenylation, and that
+various Ras-unrelated proteins may be important targets
+for FTI treatment [2,19,29,39,40]. Even though it results
+
+in  an  altered  subcellular  distribution  of  p21Ras[6],  RPR-
+130401  is  not  able  to  block  p21Ras  geranylgeranylation
+[24] in such a way that inhibition of p21Ras farnesylation
+is not likely to account for the main effects of the drug. On
+the  other  hand,  the  peptidomimetic  FTI  L-739,749  has
+been  reported  to  prevent  Ras-induced  transformation
+through inhibition of Rho-B prenylation [31] with a block
+in cell proliferation, increased apoptosis [41] and major
+changes in stress fiber formation, cell shape and mobility.
+None of these characteristic changes in cell morphology
+and architecture was observed upon prolonged exposure
+to  RPR-130401  (Figure  6), which  seems  to  rule  out  any
+member of the Rho family as a target for RPR-130401.
+
+Considering the efficient pre-mitotic block and hyperploi-
+dy induced by RPR-130401, as also found with other FTIs
+[16,29,30,42], it is tempting to postulate that the target of
+the  drug  is  a  protein  involved  at  some  stage  in  mitosis
+and/or  cytokinesis,  and  whose  farnesylation  is  required
+for  proper  activation.  Indeed,  protein  isoprenylation  is
+important  at  the  G2/M  transition  in  Schizosaccharomyces
+pombe[43] and nuclear lamins are major targets for FTase
+[18,44]. Lamin B farnesylation,  which is a very  sensitive
+target for RPR-130401 in vitro[6], appears to deserve con-
+
+Page 8 of 14
+(page number not for citation purposes)
+
+BMC Pharmacology 2002, 2
+
+http://www.biomedcentral.com/1471-2210/2/2
+
+support to  this scheme is given  by  immunofluorescence
+experiments showing that the intranuclear distribution of
+lamin  B  is  profoundly  altered  in  cells  exposed  to  RPR-
+130401 (Figure 5). This occurred without lamin B break-
+down (Figure 8), consistent with lack of a significant level
+of apoptosis in the three cell lines used. Interestingly SCH-
+66336,  another  FTI,  reportedly  allows  accumulation  of
+unfarnesylated prelamin A in patients under phase I inves-
+tigation [1] and in several cell lines in culture as well [48].
+It has also been shown that SCH-66336 induces diruption
+of  microtubule  binding  to  the  centromeric  proteins
+CENP-E and CENP-F [17], thus evoking again faulty mito-
+sis as an important outcome of FTI exposure.
+
+Conclusions
+Oncogenic Ras expression has been reported to have dif-
+ferent outcomes in rodent and human cells with regard to
+radiation susceptibility.  Studies  in mouse [49–52]  or  rat
+cells [51,53–59] relied on transfection with N-Ras[49,50],
+H-Ras[51,53–58]  or  co-transfection  with  H-Ras  and
+myc[53–55],  [58–60].  Except  in  one  study  [51],  the  au-
+thors have conclusively shown that transformation of ro-
+dent  cells  with  the  Ras  oncogenes  results  in  enhanced
+radiation resistance. Co-transfection with H-Ras and  myc
+was found to act synergistically with regard to induction of
+the  radioresistant  phenotype  [53,54,58–60],  possibly  in
+relation to inhibition of myc-dependent apoptosis [58,61].
+
+With  two exceptions in  support of increased radioresist-
+ance [62,63], early studies on human cells did not show
+any  clear-cut  relationship  between  radiation  sensitivity
+and  expression  of  oncogenic  Ras[64–67].  In  addition,  a
+study involving a cohort of patients with stage II and III
+carcinoma of the uterine cervix, demonstrated the absence
+of  a  significant  correlation  between  rearrangements  or
+structure of the Ha-ras-1 and/or c-myc genes and tumor re-
+sponse to radiotherapy [68]. However, the contribution of
+N-  or K-Ras activation  to  intrinsic  radioresistance  in  hu-
+man cells has recently been adressed directly, i.e., without
+the perturbations introduced by cell transformation [69].
+The  mechanisms  involved  in  Ras-related  radioresistance
+are still open to question, but it might reasonably be pro-
+posed  that  it  proceeds  from  constitutive  activation  of
+pathways  dowstream  from  Ras  in  signal  transduction,
+such as raf-1 [70] or phosphatidylinositol 3-kinase [71].
+
+Whether  and  how  FTase  inhibition  may  affect  the  re-
+sponse of cells to ionizing radiation has also been a long-
+standing problem.  The outcome appears to depend very
+much on the cell line and the specificity of the FTI used.
+The FTase  inhibitor  FTI-277 reportedly acted  as  a  radio-
+sensitizer  in  H-Ras-transformed  rat  embryo  fibroblasts
+[72] and in human tumor cells harboring H-Ras mutation
+[73].  On  the  other  hand,  the  radiation  susceptibility  of
+human tumor cells expressing the wild-type form of Ras
+
+Page 9 of 14
+(page number not for citation purposes)
+
+Figure 8
+Western blot analysis of lamin B in extracts from control and
+treated cells. Cells were incubated for 5-days in 75 cm2 flasks
+with  500  nM  (HCT-116),  7.1 µM  (A-549)  or  1.2  µM  (MiA-
+PaCa-2) RPR-130401. A blank was also prepared for each cell
+line. The number of cells at the time of cell lysis, was in the
+range  107.  At  the  end  of  treatment,  the  flasks  were  rinsed
+twice  with  ice-cold  PBS  and  cells  lysed  in  PHEM  buffer  as
+described under Materials and Methods. An  aliquot of each
+extract  (20  µg  total  protein)  was  loaded  in  the  wells  of  a
+7.5% polyacrylamide gel and electrophoresis was performed
+under usual conditions with molecular weight standards, fol-
+lowed by transfer to a nitrocellulose membrane. The mem-
+brane  was  incubated  with  a  mouse  monoclonal  antibody
+directed against human lamin B and revealed through chemi-
+luminescence detection (see Materials and Methods).
+
+sideration as a candidate to this role. As a matter of fact,
+among the three major type A-C lamins, lamin A and lam-
+in B are initially translated with a CAAX motif. This motif
+is cleaved upon post-translational maturation of lamin A
+but persists in lamin B, unless the C-terminal aminoacid
+residue is mutated [23]. Studies with mutant lamin delet-
+ed of the CAAX sequence have shown that the CAAX motif
+is essential to anchoring lamin B to the nuclear envelope
+[45,46]; moreover, farnesylation is required for the inte-
+gration of newly synthesized lamins into the pre-existing
+nuclear lamina during interphase, and GGTase is unable
+to substitute for FTase at this stage [47].
+
+These  data altogether  suggest  that inhibition of  lamin B
+farnesylation  could  be  an  important  target  of  RPR-
+130401, resulting in an aberrant onset of mitosis and cy-
+tokinesis and ensuing hyperploid cell generation. Strong
+
+BMC Pharmacology 2002, 2
+
+http://www.biomedcentral.com/1471-2210/2/2
+
+was  not  altered  by  FTIs  [73].  However,  enhanced  radia-
+tion  response  by  FTI-277  has  been  described  in  human
+cells  expressing  wild-type  Ras  together  with  the  24-kDa
+isoform (FGF2) of basic fibroblast growth factor, a factor
+involved in acquired radioresistance [74]. This was taken
+as an indication that farnesylated proteins other than Ras
+might  be  involved  in  the  modulation  of  radiation  re-
+sponse by FTI-277 [74]. Weak radiosensitization only was
+obtained with FTI-277 in K-Ras mutants, unless FTI-277
+was  combined  with  GGTI-298  to  hinder  geranylgeranyl
+transfer to K-Ras [73]. Last but not least FTI-induced radi-
+osensitization, when it  occurs, seems to be independent
+on the growth inhibitory effect of the FTI [73].
+
+We show here that RPR-130401 does not significantly al-
+ter the radiation susceptibility of human cells bearing K-
+Ras  mutation.  This  occurs  in  spite  of  significant  hyper-
+ploidization, accumulation of cells in G2 and depletion of
+S phase. Finally, impaired repair of radiation damage by
+RPR-130401,  appears  to  be  very  unlikely  to  occur.  This
+seems valuable in the prospect of combining RPR-130401
+as an adjuvant to conventional radiotherapy, as it should
+provide strictly additive interaction without the local and
+systemic adverse effects inherent in treatments with radia-
+tion  sensitizers  [75].  In  this  respect  it  is  very  exciting  to
+note that two farnesyltransferase inhibitors, FTI-276 and
+L-744,832, have recently proven to act synergistically with
+ionizing  radiation  in  vivo  for  growth  inhibition  of
+xenotransplanted  H-Ras-mutated  human  tumor  cells,
+without increase in acute or long-term radiation-induced
+damage to healthy tissues [76].
+
+Materials and methods
+Reagents
+RPR-130401 was synthesized as described [77] and stored
+at -20°C as a 20 mM stock solution in DMSO. Prior to use,
+the  solution  was  diluted  first  into  medium  containing
+20%  DMSO,  then  to  the  final  concentration  in  culture
+medium. DMSO was kept below 0.1% so as not to alter
+cell growth or radiation response.
+
+Colcemid and all products from cell culture were from In-
+vitrogen (Cergy-Pontoise, France). BrdUrd, propidium io-
+dide,  bisbenzimide,  DAPI,  Giemsa 
+stain,  TRITC-
+phalloidin  and  mouse  anti-α-tubulin  monoclonal  anti-
+body  (clone  DM1A)  came  from  Sigma-Aldrich  (Saint-
+Quentin-Fallavier,  France).  Mouse  monoclonal  antibod-
+ies directed against lamin B was from Oncogene Research
+Products (San Diego, California). FITC-conjugated sheep
+anti-mouse  IgG  was  from  Sanofi-Synthélabo  (Paris,
+France).  Alexa®  488  goat  anti-mouse  IgG  conjugate  was
+from  Molecular  Probes  (Eugene,  Oregon).  Rat  mono-
+clonal  antibody  directed  against  BrdUrd  was  purchased
+from Harlan Sera-Lab (Loughborough, United Kingdom),
+and  fluorescein  isothiocyanate-conjugated  goat  anti-rat
+
+IgG (heavy chain specific) was from Southern Biotechnol-
+ogy  Associates  (Birmingham,  Alabama).  Human  centro-
+mere  probes  for  FISH  was  obtained  from  QBiogene
+(Illkirch,  France).  Solvents  and  chemicals  were  of  the
+highest  purity  available  and  came  from  Merck  Eurolab
+(Paris, France).
+
+Cell culture
+HCT-116 human colon carcinoma (ATCC CCL-247), MiA-
+PaCa-2  human  pancreatic  carcinoma  (ATCC  CRL-1420)
+and A-549 human lung carcinoma cells (ATCC CCL-185)
+were grown as monolayers in DMEM (HCT-116, MiAPaCa-
+2) or RPMI-1640 (A-549 cells) containing sodium pyruvate
+and Glutamax I, and supplemented with 10% foetal calf se-
+rum, 100 IU/ml penicillin, and 0.1 mg/ml  streptomycin.
+Cells  were  routinely  subcultured  after  trypsinization  at  a
+density of 6,000 cells/cm2 in culture flasks every 5-days and
+incubated at 37°C in a humidified atmosphere of 7% CO2
+in air. Less than 9–10 passages of the same primary subcul-
+ture were allowed. Prior to seeding, cells were rinsed twice
+with  HBSS,  harvested  by  trypsin-EDTA  treatment  and
+counted in an hemocytometer.
+
+Survival assays
+Radiation survival with or without combined drug expo-
+sure was determined by clonogenic assays. For determina-
+tion  of  the  response  to  radiation  alone,  cells  from
+exponentially growing subcultures were seeded in 25 cm2
+flasks at  the  suitable density, incubated  for 3-h to allow
+cells to adhere and spread, and irradiated in culture medi-
+um at room temperature in an IBL-637 (137Cs) irradiator
+(CIS-Biointernational,  Saclay,  France)  at  a  dose-rate  of
+0.92 Gy/min. All experiments were performed in triplicate
+or more.
+
+Two protocols were used in single or combined treatment
+assays. For short lengths of drug exposure (≤ 12-h), 1,000
+cells were plated in triplicate in 25 cm2 flasks and incubat-
+ed for 3-h. Cells were then exposed to drug for 1-, 2-, 3-,
+4- or 12-h, irradiated and returned to the incubator for 1-
+h in the presence of RPR-130401, followed by two washes
+with HBSS and feeding with drug-free medium. Colonies
+were allowed to grow for 8–11 days, then fixed with meth-
+anol, stained with Giemsa and scored. Small colonies (<
+30–50 cells) were disregarded. Results were corrected for
+cell multiplicity (see below).
+
+Where the length of drug exposure was in excess of 12-h,
+cells  were plated  after treatments  to  avoid  biases  due  to
+the formation of microcolonies. Typically, cells were plat-
+ed in 25 cm2 flasks and exposed to drug for 1-, 2-, 3-, 4- or
+5-days, and irradiated. Seeding was adjusted so as to ob-
+tain  an equal  number  of cells at the time of irradiation,
+taking  into  consideration  the  cytostatic  effect  of  the  FTI
+and  the  length  of  drug  exposure.  Each  flask  was
+
+Page 10 of 14
+(page number not for citation purposes)
+
+BMC Pharmacology 2002, 2
+
+http://www.biomedcentral.com/1471-2210/2/2
+
+trypsinized  immediately  after  irradiation,  the  cells  were
+counted and 1,000 cells per flask were replated in drug-
+free medium for colony formation assays.
+
+Flow cytometry and cytogenetic analysis
+Cell cycle progression was monitored by dual parameter
+flow  cytometry  using  a  FACStar  PLUS  cytofluorometer
+(Becton Dickinson, Le Pont de Claix, France). Cells were
+grown  for  3- to  6-days with  or  without  RPR-130401.  At
+that time,  flasks  were irradiated to 3.5 Gy (HCT-116), 5
+Gy (A-549) or 5.5 Gy (MiAPaCa-2) and allowed to rest in
+the  incubator  for  24-h  prior  to  fixation.  15-min  before
+harvesting, cells were incubated with BrdUrd (10 µM) for
+pulse-labeling  of  S-phase  cells,  then  collected,  washed
+once  with  cold  PBS  and  fixed  in  70%  ice-cold  ethanol.
+Treatment of fixed cells for cytofluorimetric analysis, data
+acquisition  and  processing  were  done  according  to  De-
+marcq et al.[78]. Cell cycle analysis was  performed with
+ProCyt software (CEA-INSERM, Grenoble, France).
+
+Alternatively, HCT-116 treated cells were incubated with
+0.2 µg/ml colcemid for 1-h, washed twice with HBSS and
+allowed to swell for 30-min in 75 mM KCl hypotonic so-
+lution. Cells were then fixed in 3:1 v/v methanol:acid ace-
+tic in ice and washed threefold in the same solvent. Fixed
+cells  were  dropped  onto  glass  slides  to  spread  chromo-
+somes, and air dried. Slides were stained with Giemsa be-
+fore scoring.
+
+Immunofluorescence
+For  immunofluorescence  characterization,  cells  were
+grown on 20 × 20 mm coverslips in medium containing
+10%  foetal  calf  serum  for  3-  to  6-days  with  or  without
+RPR-130401. At that time, the coverslips were irradiated
+to 3.5 Gy (HCT-116), 5 Gy (A-549) or 5.5 Gy (MiAPaCa-
+2) and allowed to rest in the incubator for 24-h prior to
+fixation.
+
+To  visualize  polymerized  actin  and  tubulin,  cells  were
+processed according to Mies et al.[79]. Briefly, cells were
+fixed in 0.25% glutaraldehyde, 0.5% Triton X-100 for 1-
+min, followed by 10-min in freshly prepared 4% formal-
+dehyde and extensive washing. The coverslips were then
+incubated (30-min, 37°C) with 0.2 µg/ml TRITC-labeled
+phalloidin,  or  with  a  1:200  working  dilution  of  mono-
+clonal anti-α tubulin antibody followed by a 30-min in-
+cubation  with  a  1:1,000  dilution  of  FITC-conjugated
+sheep anti-mouse IgG at 37°C.
+
+To visualize lamin, cells were fixed in acetone/methanol
+(1:1,  v/v)  for  20-min  at  -20°C,  allowed  to  air  dry,  then
+washed 3 times with PBS and treated with 0.5% Triton X-
+100 for 5-min at 4°C to permeabilize cells. The coverslips
+were  incubated  (30-min,  37°C)  with  5  µg/ml  of  mono-
+clonal anti-lamin B antibody followed by a 30-min incu-
+
+bation  with  1:500  Alexa®  488  goat  anti-mouse  IgG
+conjugate.
+
+To  visualize  nuclei,  the  cells  were  counter-stained  with
+bisbenzimide  (0.2  µg/ml)  or  DAPI  (0.12  µg/ml).  Cells
+were  viewed  on  a  Zeiss  microscope  and  photographed
+with Ilford HP-5 film.
+
+Western blots
+For determination of lamin B cleavage, HCT-116, A-549
+and MiAPaCa-2 cells were exposed for 5-days at 10 × IC50
+each of RPR-130401. At the end of treatment, cells were
+harvested in PBS with 2 mM EDTA and lysed for 20-min
+on  ice  with  gentle  agitation  in  PHEM  buffer  (80  mM
+PIPES, 80 mM HEPES, 10 mM EDTA, 5 mM MgCl2, 1%
+Triton X-100, pH 7.4) supplemented with 1 mM PMSF, 10
+µg/ml aprotinin and 1 µg/ml each of leupeptin and pep-
+statin. The insoluble fraction, containing lamin B, was re-
+covered by centrifugation, solubilized in Laemmli buffer
+(3% lauryl sulfate, 10% glycerol, 5% 2-mercaptoethanol,
+62.5 mM Tris-HCl, pH 6.8) and titrated.
+
+An aliquot (20 µg total protein) of each extract was loaded
+onto 7.5% polyacrylamide gel, electrophoresed, and blot-
+ted onto nitrocellulose (Schleicher & Schuell, Dassel, Ger-
+many). The membrane was saturated with bovine serum
+albumine and incubated with a mouse monoclonal anti-
+body directed against lamin B. Protein detection was car-
+ried  out  using  a  peroxidase-conjugated  goat  anti-mouse
+secondary antibody and an ECL kit (Amersham Pharma-
+cia Biotech, Orsay, France). Quantification was performed
+by  densitometry  with  the  aid  of  QuantityOne®  software
+(Bio-Rad, Hercules, California).
+
+Curve fittings and correction for cellular multiplicity
+Care  was taken to  avoid contamination of seed cell sus-
+pensions  by  clusters,  as  their  presence  introduces  large,
+systematic  errors  in  viability  measurements  with  clono-
+genic assays [80]. For this reason, the cellular multiplicity,
+i.e., the number of cells per potential colony-forming unit
+was  carefully  checked  by  microscope  observation  at  the
+time of irradiation throughout the whole study. When the
+average multiplicity was less than 1.1 (for 1- and 2-h drug
+exposure),  no  correction  was  applied.  Corrections  were
+necessary for longer lengths of drug exposure (≥ 3-h), be-
+cause viable colony-forming units contained a substantial
+amount  of  doublets  and  quadruplets  at  these  times.  In
+that case, the equation:
+
+(
+
+1
+
+)
+
+=
+
+S
+
+exp
+
+n
+
+∑
+
+1
+
+−
+
+1
+
+−(
+1
+
+
+
+
+a
+
+n
+
+SCSF
+
+)
+n
+
+
+
+
+(where  Sexp  is  the experimental  cell survival  determined
+from  bulk colony scoring and an the  fraction of colony-
+
+Page 11 of 14
+(page number not for citation purposes)
+
+BMC Pharmacology 2002, 2
+
+http://www.biomedcentral.com/1471-2210/2/2
+
+forming units with n viable cells) was used in order to cal-
+culate the single-cell surviving fraction (SCSF).
+
+Radiation  survival  curves  with  or  without  co-treatment
+with RPR-130401 were drawn for best fit to a linear-quad-
+ratic equation, as usual [81]:
+
+4.
+
+5.
+
+itor  R115777  in  adults  with  refractory  and  relapsed  acute
+leukemias:  a  phase  1  clinical-laboratory  correlative  trial.
+Blood 2001, 97:3361-3369
+Punt CJ, van Maanen L, Bol CJ, Seifert WF, Wagener DJ: Phase I and
+pharmacokinetic  study  of  the  orally  administered  farnesyl
+transferase inhibitor R115777 in patients with advanced solid
+tumors. Anticancer Drugs 2001, 12:193-197
+Zujewski J, Horak ID, Bol CJ, Woestenborghs R, Bowden C, End DW,
+Piotrovsky VK, Chiao J, Belly RT, Todd A, Kopp WC, Kohler DR,
+Chow C, Noone M, Hakim FT, Larkin G, Gress RE, Nussenblatt RB,
+Kremer AB, Cowan KH: Phase I and pharmacokinetic study of
+farnesyl protein transferase  inhibitor R115777  in advanced
+cancer. J Clin Oncol 2000, 18:927-941
+
+(
+
+)
+
+2
+
+ln
+
+S
+S
+
+0
+
+= −
+
+α
+
+−
+
+β
+
+2
+D
+
+D
+
+where S0 is the clonogenic efficiency, S the residual surviv-
+al, D the radiation dose, and α and β numerical parame-
+ters characterizing the radiosensitivity of the cell line.
+
+Equation  (1)  was  solved  with  the  aid  of  a  home-made
+program. Least-squares regressions  were  performed on  a
+Macintosh  microcomputer  using  Kaleidagraph  software
+(Synergy Software, Reading, Pennsylvania).
+
+List of abbreviations
+FTase, farnesyltransferase;
+
+FPP, farnesyl pyrophosphate;
+
+FTI, farnesyltransferase inhibitor; 
+
+GGTase,  geranylgeranyl  transferase;  HBSS,  Hank's  bal-
+anced salt solution;
+
+BrdUrd, 5-Bromo-2'-deoxyuridine;
+
+PMSF, phenylmethylsulfonyl fluoride;
+
+FISH, Fluorescence In Situ Hybridation; IC50, amount of
+drug that reduces the growth of treated cells to 50% of that
+of controls.
+
+Acknowledgments
+The authors wish to thank Drs. Patrick Mailliet and Jean-François Riou 
+(Aventis Pharma) for the generous gift of RPR-130401. Grafetul thanks are 
+also due to Hervé Tourbez for creating the program used for the correc-
+tion of cell multiplicity and to Dany Rouillard for flow cytometric analysis. 
+This work was supported by grants from the Association pour la Recherche 
+sur le Cancer (ARC-9746) and the Institut Curie (Radiobiology and Geno-
+toxicology program), and by financial aid from the Institut National de la 
+Santé et de la Recherche Médicale.
+
+References
+1.
+
+Adjei AA, Erlichman C, Davis JN, Cutler DL, Sloan JA, Marks RS, Han-
+son LJ, Svingen PA, Atherton P, Bishop WR, Kirschmeier P, Kaufmann
+SH:  A  Phase  I  trial  of  the  farnesyl  transferase  inhibitor
+SCH66336: evidence for biological and clinical activity. Cancer
+Res 2000, 60:1871-1877
+Crul M, de Klerk GJ, Beijnen JH, Schellens JHM: Ras biochemistry
+and farnesyl transferase inhibitors: a literature survey.  Anti-
+cancer Drugs 2001, 12:163-184
+Karp JE, Lancet JE, Kaufmann SH, End DW, Wright JJ, Bol K, Horak I,
+Tidwell ML, Liesveld J, Kottke TJ, Ange D, Buddharaju L, Gojo I, High-
+smith  WE,  Belly  RT,  Hohl  RJ,  Rybak ME,  Thibault  A, Rosenblatt  J:
+Clinical and biologic activity of the farnesyltransferase inhib-
+
+2.
+
+3.
+
+6. Mailliet P, Riou J-F, Duchesne M, Lelièvre Y, Lavayre J, Bourzat J-D,
+Capet M, Chevé M, Commerçon A, Martin M, Thompson F, Dereu N,
+Lavelle F: Benzo(f)perhydroisoindoles: a series of potent and
+selective inhibitors of the farnesylation of Ki-Ras. Proc Amer As-
+soc Cancer Res 1998, 39:270
+Bos JL: Ras oncogenes in human cancer: a review. Cancer Res
+1989, 49:4682-4689
+
+8. Marshall CJ: Protein-prenylation:  a  mediator of protein-pro-
+
+7.
+
+9.
+
+10.
+
+11.
+
+tein interactions. Science 1993, 259:1865-1866
+Zhang  FL,  Casey  PJ:  Protein  prenylation:  molecular  mecha-
+nisms  and  functional  consequences.  Annu  Rev  Biochem  1996,
+65:241-269
+James  GL,  Goldstein  JL,  Brown  MS:  Polylysine  and  CVIM  se-
+quences of K-RasB dictate specificity of prenylation and con-
+fer  resistance to benzodiazepine peptidomimetic in vitro.  J
+Biol Chem 1995, 270:6221-6226
+Jackson JH, Cochrane CG, Bourne JR, Solski PA, Buss JE, Der CJ: Far-
+nesol modification of Kirsten-ras 4B protein is essential for
+transformation. Proc Natl Acad Sci USA 1990, 87:3042-3046
+
+13.
+
+12. Kato K, Cox AD, Hisaka MM, Graham SM, Buss JE, Der CJ: Isopre-
+noid addition to ras protein is the critical modification for its
+membrane  association  and  transforming  activity.  Proc  Natl
+Acad Sci USA 1992, 89:6403-6407
+Lowy DR, Willumsen BM: Function and regulation of ras. Annu
+Rev Biochem 1993, 62:851-891
+
+14. Gibbs JB, Oliff A,  Kohl NE: Farnesyltransferase inhibitors: ras
+research  yields  a  potential  cancer  therapeutic.  Cell  1994,
+77:175-178
+
+15. Tamanoi F: Inhibitors of ras farnesyltransferases. Trends Biochem
+
+Sci 1993, 18:349-353
+
+16. Miquel K, Pradines A, Sun J, Qian Y, Hamilton AD, Sebti SM, Favre G:
+GGTI-298 induces G0-G1 block and apoptosis whereas FTI-
+277 causes G2-M enrichment in A549 cells.  Cancer Res 1997,
+57:1846-1850
+
+17. Ashar HR, James L, Gray K, Carr D, Black S, Armstrong L, Bishop
+WR, Kirschmeier P: Farnesyl transferase inhibitors block the
+farnesylation of CENP-E and CENP-F, and alter the associa-
+tion  of  CENP-E  with  the  microtubules.  J  Biol  Chem  2000,
+275:30451-30457
+Sinensky M: Recent advances in the study of prenylated pro-
+teins. Biochim Biophys Acta 2000, 1484:93-106
+
+19. Cox AD: Farnesyltransferase inhibitors: potential role in the
+
+18.
+
+treatment of cancer. Drugs 2001, 61:723-732
+
+20. Gibbs JB: Ras C-terminal processing enzymes-new drug tar-
+
+gets? Cell 1991, 65:1-4
+
+21. Glomset JA, Gelb MH, Farnsworth CC: Prenyl proteins in eukary-
+otic cells: a new type of membrane anchor. Trends Biochem Sci
+1990, 15:139-142
+
+22. Vrignaud P, Bello A, Bissery MC, Jenkins R, Hasnain A, Mailliet P, La-
+velle F: RPR130401 a non-peptidomimetic farnesyltransferase
+inhibitor with in vivo activity. Proc  Amer Assoc Cancer Res 1998,
+39:270
+
+23. Yokoyama K, Goodwin GW, Gomashchi F, Glomset JA, Gelb MH: A
+protein geranylgeranyltransferase from bovine brain: impli-
+cations for protein prenylation specificity. Proc Natl Acad Sci USA
+1991, 88:5302-5306
+
+24. Mazet JL, Padieu M, Osman H, Maume G, Mailliet P, Dereu N, Hamil-
+ton AD, Lavelle F, Sebti SM, Maume BF: Combination of the novel
+farnesyltransferase inhibitor RPR130401 and the geranylger-
+anyltransferase-1  inhibitor  GGTI-298  disrupts  MAP  kinase
+activation  and  G(1)-S  transition  in  Ki-Ras-overexpressing
+transformed adrenocortical cells. FEBS Lett 1999, 460:235-240
+
+Page 12 of 14
+(page number not for citation purposes)
+
+BMC Pharmacology 2002, 2
+
+http://www.biomedcentral.com/1471-2210/2/2
+
+26.
+
+29.
+
+33.
+
+31.
+
+32.
+
+25. Cates CA, Michael RL, Stayrook KR, Harvey KA, Burke YD, Randall
+SK, Crowell PL, Crowell DN: Prenylation of oncogenic human
+PTP(CAAX) protein tyrosine phosphatases. Cancer Lett 1996,
+110:49-55
+Shirasawa S, Furuse M, Yokoyama N, Sasazuki T: Altered growth of
+human colon cancer cell lines disrupted at activated Ki-ras.
+Science 1993, 260:85-88
+
+27. Berrozpe G, Schaeffer J, Peinado MA, Real FX, Perucho M: Compar-
+ative analysis of mutations in the p53 and K-ras genes in pan-
+creatic cancer. Int J Cancer 1994, 58:185-191
+
+28. Valenzuela DM, Groffen J: Four human carcinoma cell lines with
+novel mutations in position 12 of c-K-ras oncogene. Nucleic Ac-
+ids Res 1986, 14:843-852
+Song SY, Meszoely IM, Coffey RJ, Pietenpol JA, Leach SD: K-Ras-in-
+dependent  effects  of  the  farnesyl  transferase  inhibitor  L-
+744,832  on  cyclin  B1/Cdc2  kinase  activity,  G2/M  cell  cycle
+progression and apoptosis in human pancreatic ductal aden-
+ocarcinoma cells. Neoplasia 2000, 2:261-272
+
+30. Crespo NC, Ohkanda J, Yen TJ, Hamilton AD, Sebti SM: The far-
+nesyltransferase inhibitor, FTI-blocks bipolar spindle forma-
+tion and chromosome alignment and causes prometaphase
+accumulation during mitosis of human lung cancer cells. J Biol
+Chem 2153, 276:16161-16167
+Lebowitz PF, Davide JP, Prendergast GC: Evidence that farnesyl-
+transferase inhibitors suppress Ras transformation by inter-
+fering with Rho activity. Mol Cell Biol 1995, 15:6613-6622
+Prendergast GC: Farnesyltransferase inhibitors: antineoplastic
+mechanism  and  clinical  prospect.  Curr  Opin  cell  Biol  2000,
+12:166-173
+Prendergast  GC,  Davide  JP,  de  Solms  SJ,  Giuliani  EA,  Graham  SL,
+Gibbs JB, Oliff A, Kohl NE: Farnesyltransferase inhibition causes
+morphological reversion of ras-transformed cells by a com-
+plex  mechanism  that  involves  regulation  of  the  actin  cy-
+toskeleton. Mol Cell Biol 1994, 14:4193-4202
+
+34. Denko NC, Giaccia AJ, Stringer JR, Stambrook PJ: The human Ha-
+ras oncogene induces genomic instability in murine fibrob-
+lasts within one cell cycle. Proc Natl Acad Sci USA 1994, 91:5124-
+5128
+
+35. Denko NC, Stringer J, Wani M, Stambrook PJ: Mitotic and post mi-
+totic consequences of genomic instability induced by onco-
+genic Ha-Ras. Somatic Cell Mol Genet 1995, 21:241-253
+
+36. Kowluru A: Evidence for the carboxyl methylation of nuclear
+lamin-B in the pancreatic beta cell. Biochem Biophys Res Commun
+2000, 268:249-254
+
+37. Oberhammer FA, Hochegger K, Froschl G, Tiefenbacher R, Pavelka
+M:  Chromatin  condensation  during  apoptosis  is  accompa-
+nied by degradation of lamin A+B, without enhanced activa-
+tion of cdc2 kinase. J Cell Biol 1994, 126:827-837
+
+38. Kohl NE, Mosser SD, de Solms SJ, Giuliani EA, Pompliano DL, Graham
+SL, Smith RL, Scolnick EM, Oliff A, Gibbs JB: Selective inhibition of
+ras-dependent  transformation  by  a  farnesyltransferase  in-
+hibitor. Science 1993, 260:1934-1397
+Lebowitz PF, Prendergast GC: Non-Ras targets of farnesyltrans-
+ferase inhibitors: focus on Rho. Oncogene 1998, 17:1439-1445
+Servais P, Gulbis B, Fokan  D,  Galand  P: Effects  of  the farnesyl-
+transferase  inhibitor  UCF-1C/Manumycin  on  growth  and
+p21-Ras  post-translational  processing  in  NIH3T3  cells.  Int  J
+Cancer 1998, 76:601-608
+
+41. Du W, Lebowitz F, Prendergast GC: Cell growth inhibition of far-
+nesyltransferase inhibitors is mediated by gain of geranylger-
+anylated RhoB. Mol Cell Biol 1999, 19:1831-1840
+
+42. Ashar HR, James L, Gray K, Carr D, McGuirk M, Maxwell E, Black S,
+Armstrong L, Doll RJ, Taveras AG, Bishop WR, Kirschmeier P: The
+farnesyl transferase inhibitor SCH 66336 induces a G(2) → M
+or G(1) pause in sensitive human tumor cell lines. Exp Cell Res
+2001, 262:17-27
+
+43. Galli I, Uchiyama M, Wang TS: DNA replication and order of cell
+cycle events: a role for protein isoprenylation? Biol Chem 1997,
+378:963-973
+Farnsworth CC, Wolda SL, Gelb MH, Glomset JA: Human lamin B
+contains  a  farnesylated  cysteine  residue.  J  Biol  Chem  1989,
+264:20422-20429
+
+45. Kitten GT, Nigg EA: The CAAX motif is required for isopre-
+nylation, carboxyl methylation, and nuclear membrane asso-
+ciation of lamin B2. J Cell Biol 1991, 113:13-23
+
+39.
+
+40.
+
+44.
+
+49.
+
+52.
+
+50.
+
+55.
+
+46. Mical TI, Monteiro MJ: The role of sequences unique to nuclear
+intermediate filaments in the targeting and assembly of hu-
+man lamin B: evidence for lack of interaction of lamin B with
+its putative receptor. J Cell Sci 1998, 111:3471-3485
+
+47. Hennekes H, Nigg EA: The role of isoprenylation in membrane
+attachment of nuclear lamins : a single point mutation pre-
+vents proteolytic cleavage of the lamin A precursor and con-
+fers  membrane binding  properties.  J  Cell  Sci  1994,  107:1019-
+1029
+
+48. Adjei AA, Davis JN, Erlichman C, Svingen PA, Kaufmann SH: Com-
+parison  of  potential  markers  of  farnesyltransferase  inhibi-
+tion. Clin Cancer Res 2000, 6:2318-2325
+Fitzgerald  TJ,  Daugherty  C,  Kase  K,  Rothstein  LA,  McKenna  M,
+Greenberger  JS:  Activated  human N-ras oncogene  enhances
+X-irradiation repair of mammalian cells in vitro less effective-
+ly at low dose rate. Implications for increased therapeutic ra-
+tio of low dose rate irradiation. Am J Clin Oncol 1985, 8:517-522
+Sklar MD: The ras oncogenes increase the intrinsic resistance
+of NIH3T3 cells to ionizing radiation. Science 1988, 239:645-647
+51. Harris JF, Chambers AF, Tam ASK: Some ras-transformed cells
+have increased radiosensitivity and decreased repair of sub-
+lethal radiation damage. Somatic Cell Mol Genet 1990, 16:39-48
+Pirollo KF, Tong Y-A,  Villegas Z, Chen  Y, Chang EH: Oncogene-
+transformed NIH3T3 cells display radiation resistance levels
+indicative of a signal transduction pathway leading to the ra-
+diation-resistant phenotype. Radiat Res 1993, 135:234-243
+
+53. McKenna WG, Weiss MC, Bakanauskas VJ, Sandler H, Kelsten ML, Bi-
+aglow J, Tuttle SW, Endlich B, Ling CC, Muschel RJ: The role of the
+H-ras oncogene in radiation resistance and metastasis.  Int  J
+Radiat Oncol Biol Phys 1990, 18:849-859
+
+54. McKenna WG, Weiss MC, Endlich B, Ling CC, Bakanauskas VJ, Kel-
+sten ML, Muschel RJ: Synergistic effect of the v-myc oncogene
+with H-ras radioresistance. Cancer Res 1990, 50:97-102
+Iliakis G, Metzger L, Muschel RJ, McKenna WG: Induction and re-
+pair of DNA double strand breaks in radiation-resistant cells
+obtained by transformation of primary rat embryo cells with
+the oncogenes H-ras and v-myc. Cancer Res 1990, 50:6575-6579
+56. Hermens AF, Bentvelzen PAJ: Influence of the H-ras oncogene on
+radiation  responses  of  a  rat  rhabdomyosarcoma  cell  line.
+Cancer Res 1992, 52:3073-3082
+
+57. Ong A, Li WX, Ling CC: Low-dose-rate irradiation of rat em-
+bryo  cells  containing  the  Ha-ras  oncogene.  Radiat  Res  1993,
+134:251-255
+
+58. McKenna WG, Bernhard EJ, Markiewicz DA, Rudoltz MS, Maity A,
+Muschel RJ: Regulation of radiation-induced apoptosis in onco-
+gene-transfected fibroblasts: influence of H-ras on the G2 de-
+lay. Oncogene 1996, 12:237-245
+Ling  CC,  Endlich  B:  Radioresistance  induced  by  oncogenic
+transformation. Radiat Res 1989, 120:267-279
+
+60. McKenna  WG,  Iliakis  G,  Weiss  MC,  Bernhard  EJ,  Muschel  RJ:  In-
+creased  G2  delay  in  radiation-resistant  cells  obtained  by
+transformation of primary rat embryo cells with the onco-
+genes H-ras and v-myc. Radiat Res 1991, 125:283-287
+
+61. Chen  CH,  Zhang  J,  Ling  CC:  Transfected  c-myc  and  c-Ha-ras
+modulate  radiation-induced  apoptosis  in  rat  embryo  cells.
+Radiat Res 1994, 139:307-315
+
+62. Miller AC, Kariko K, Myers CE, Clark EP, Samid D: Increased radi-
+oresistance  of  EJ-ras-transformed  human  osteosarcoma
+cells and its modulation by lovastatin, an inhibitor of p21ras
+isoprenylation. Int J Cancer 1993, 53:302-307
+
+63. Bruyneel EA, Storme GA, Schallier DCC, Van den Berge DL, Hilgard
+P, Mareel MM: Evidence for abrogation of oncogene-induced
+radioresistance of mammary cancer cells by hexadecylphos-
+phocholine in vitro . Eur J Cancer 1993, 29A:1958-1963
+
+64. Grant ML, Bruton RK, Byrd J, Gallimore PH, Steele JC, Taylor AML,
+Grand RJA: Sensitivity to ionising radiation of transformed hu-
+man cells containing mutant ras genes. Oncogene 1990, 5:1159-
+1164
+
+65. Alapetite C, Baroche C, Remvikos Y, Goubin G, Moustacchi E: Stud-
+ies on the influence of the presence of an activated ras onco-
+gene  on  the  in  vitro  radiosensitivity  of  human  mammary
+epithelial cells. Int J Radiat Biol 1991, 59:385-396
+
+66. Mendonca MS, Boukamp P, Stanbridge EJ, Redpath JL: The radiosen-
+sitivity of human keratinocytes: influence of activated c-H-
+ras oncogene and tumorigenicity. Int J Radiat Biol 1991, 59:1195-
+1206
+
+59.
+
+Page 13 of 14
+(page number not for citation purposes)
+
+BMC Pharmacology 2002, 2
+
+http://www.biomedcentral.com/1471-2210/2/2
+
+68.
+
+67. Minarik L, Hall E, Miller R: Tumorigenicity, oncogene transfec-
+
+tion, and radiosensitivity. Cancer J Sci Am 1996, 2:351
+Polischouk AG, Scotnikova OI, Sergeeva NS, Zharinov GM, Lewen-
+sohn  R,  Zhivotovsky  B:  Response  to  radiotherapy  of  human
+uterine cervix carcinoma is not correlated with rearrange-
+ments of the Ha-ras-1 and/or c-myc genes. Eur J Cancer 1997,
+33:942-949
+
+70.
+
+69. Bernhard EJ, Stanbridge EJ, Gupta S, Gupta AK, Soto D, Bakanauskas
+VJ, Cerniglia GJ, Muschel RJ, McKenna WG:  Direct evidence for
+the contribution of activated N-ras and K-ras oncogenes to
+increased intrinsic radiation resistance in human tumor cell
+lines. Cancer Res 2000, 60:6597-6600
+Pirollo KF, Hao Z, Rait A, Ho CW, Chang EH: Evidence supporting
+a signal transduction pathway leading to the radiation-resist-
+ant phenotype in human tumor cells. Biochem Biophys Res Com-
+mun 1997, 230:196-201
+
+71. Gupta  AK,  Bakanauskas  VJ,  Cerniglia  GJ,  Cheng  Y,  Bernhard  EJ,
+Muschel RJ, McKenna WG: The Ras radiation resistance path-
+way. Cancer Res 2001, 61:4278-4282
+
+72. Bernhard EJ, Kao G, Cox AD, Sebti SM, Hamilton AD, Muschel RJ,
+McKenna WG: The farnesyltransferase inhibitor FTI-277 radi-
+osensitizes H-ras-transformed rat embryo fibroblasts. Cancer
+Res 1996, 56:1727-1730
+
+73. Bernhard EJ, McKenna WG, Hamilton AD, Sebti SM, Qian Y, Wu J-M,
+Muschel RJ: Inhibiting ras prenylation increases the radiosen-
+sitivity of human tumor cell lines with activating mutations
+of ras oncogenes. Cancer Res 1998, 58:1754-1761
+
+74. Cohen-Jonathan  E,  Toulas  C,  Ader  I,  Monteil  S,  Allal  C,  Bonnet  J,
+Hamilton AD, Sebti SM, Daly-Schveitzer N, Favre G: The farnesyl-
+transferase inhibitor FTI-277 suppresses the 24-kDa FGF2-
+induced  radioresistance  in  HeLa  cells  expressing  wild-type
+RAS. Radiat Res 1999, 152:404-411
+
+75. Balosso J, Minne J-F, Touboul E: Late complications of chemora-
+diotherapeutic combinations: fundamental aspects and clin-
+ical experience. Bull Cancer Radiother 1995, 82:101-112
+
+76. Cohen-Jonathan E, Muschel RJ, McKenna WG, Evans SM, Cerniglia G,
+Mick R, Kusewitt D, Sebti SM, Hamilton AD, Oliff A, Kohl N, Gibbs
+JB, Bernhard EJ: Farnesyltransferase inhibitors potentiate the
+antitumor effect of radiation on a human tumor xenograft
+expressing activated HRAS. Radiat Res 2000, 154:125-132
+
+77. Mailliet P, Laoui A, Bourzat J-D, Capet M, Chevé M, Commerçon A,
+Dereu N, LeBrun A, Martin J-P, Peyronel J-F, Salagnad C, Thompson
+F, Zucco M, Guitton J-D, Pantel G, Bissery M-C, Brealey C, Lavayre J,
+Lelièvre Y, Riou J-F, Vrignaud P, Duchesne M, Lavelle F: I. Target for
+Cancer and Cardiovascular Therapy. In: Farnesyl Transferase and
+Geranylgeranyl Transferase 1999
+
+78. Demarcq C, Bastian G, Remvikos Y: BrdUrd/DNA flow cytome-
+try analysis demonstrates cis-diaminedichloroplatinium (II)-
+induced multiple cell cycle modifications on human lung car-
+cinoma cells. Cytometry 1992, 13:416-422
+
+79. Mies B, Rottner K, Small JV: Multiple immunofluorescence mi-
+croscopy of the cytoskeleton. In: Cell biology: a laboratory handbook
+1998, 2:469-476
+
+80. Rockwell S: Effects of clumps and clusters on survival meas-
+urements  with  clonogenic  assays.  Cancer  Res  1985,  45:1601-
+1607
+
+81. Hall  A:  Ras  and  GAP  –  Who's  controlling  whom?  Cell  1990,
+
+82.
+
+61:921-923
+Little JB, Hahn GM, Frindel E, Tubiana M: Repair of potentially le-
+thal  radiation  damage  in  vitro  and  in  vivo.  Radiology  1973,
+106:689-694
+
+Publish with BioMed Central   and  every 
+scientist can read your work free of charge
+
+"BioMedcentral will be the most significant development for 
+disseminating the results of biomedical research in our lifetime."
+
+Paul Nurse, Director-General, Imperial Cancer Research Fund
+Publish with BMC and your research papers will be:
+
+available free of charge to the entire biomedical community
+peer reviewed and published immediately upon acceptance
+cited in PubMed and archived on PubMed Central 
+yours - you keep the copyright
+
+BioMedcentral.com
+
+Submit your manuscript here:
+http://www.biomedcentral.com/manuscript/
+
+editorial@biomedcentral.com
+
+Page 14 of 14
+(page number not for citation purposes)
+
+
