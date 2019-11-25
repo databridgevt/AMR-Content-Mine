@@ -4,7 +4,7 @@ Hey AMR Team,
 
 It's Tanner, here. While working on multi-processing, I've made a few opinionated refactors to the scripts, local environment, and repository. If anything seems weird or out-of-place, feel free to rollback my commits, of course. `git reset --hard 3a21a71` should take you back to the "original"  repository. Alternatively, I put this "original" repository in another branch. `git checkout v1.0` will take you to that branch.
 
-## Basic Usage
+## Usage
 
 ### Downloading The Papers
 
