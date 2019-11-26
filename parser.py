@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 from plots import *
-import pathlib
+import multiprocessing
+from pathlib import Path
 import os
 import pdfminer
 import subprocess
@@ -500,10 +501,11 @@ worksheet.write('AQ1', 'Count for "manure"')
 worksheet.write('AR1', 'Count for "biosolids"')
 worksheet.write('AS1', 'Count for "aquaculture"')
 
-for name in os.listdir(pdfDirectoryPath):
-    if "eupmc" in name or ".DS_Store" == name:
-        continue
-    pdfPath = pdfDirectoryPath + name + "/fulltext.pdf"
+def process_one(file_path):
+    filename = file_path.name
+    if "eupmc" in filename or ".DS_Store" == filename:
+        pass
+    pdfPath = file_path.as_posix()
     # if test == True:
     #     print("name = " + pdfPath)
     #     test == False
@@ -514,8 +516,8 @@ for name in os.listdir(pdfDirectoryPath):
         subprocess.call("pdf2txt.py -o output.txt " + pdfPath, shell=True)
         # if ((pdfNum + 1) % 10 == 0):
         print("\npdfNum = " + str(pdfNum + 1) + " (" + time() + ")\n")
-        updateData(name)
-        with open(pdfDirectoryPath + name + "/eupmc_result.json") as json_file2:
+        updateData(filename)
+        with open(pdfDirectoryPath + filename + "/eupmc_result.json") as json_file2:
             specficData = json.load(json_file2)
         #create an array that stores the data for each category for only this 'name'. deletes after every iteration of for.
         #use array to access data from excel
@@ -577,6 +579,43 @@ for name in os.listdir(pdfDirectoryPath):
 #with open('articleData.txt', 'w') as outfile:
     #json.dumps(articleData, outfile)
 
+
+def test(x):
+    print("called")
+    return x**2
+
+
+
+def process_all():
+    """ Uses Pool to Process all PDFs
+
+    This function uses a Process Pool to speed up this script. Essentially,
+    This function will create a process for every CPU core available. Then, we pass
+    process_one() and a list of all PDFs to the pool.
+
+    """
+
+    # Get a Path Object of the current directory
+    curr_dir = Path.cwd()
+
+    # Use pathlib to glob all PDFs from ./AmsContainer
+    # '**' recursively matches all subdirectories
+    pdfs = list(curr_dir.glob('AmsContainer/**/*.pdf'))
+
+    # Creating a Process Pool
+    pool = multiprocessing.Pool()
+    print('Spawned Pool with {} Processes'.format(multiprocessing.cpu_count()))
+
+    # Give Some work to the Pool
+    # 30 is called a "chunksize." I think the processes will take pdfs
+    # in groups of 30 to process.
+    pool.map(process_one, pdfs, 30)
+
+    # Politely clean up the Process Pool
+    pool.close()
+    pool.join()
+
+process_all()
 
 
 ##########################################
@@ -699,81 +738,85 @@ def articleWordTable(pmcId="all", n=25):
 
 
 ##### KEY TERM OCCURENCE VS TIME LINE GRAPH #####
-lineData = collectLines()
-x = lineData[0]
-ys = lineData[1]
-title = "How Term Frequency Changes Over Time"
-xlabel = "Date"
-ylabel = "Count"
-legend = searchedTerms
-lines = linePlot(x, ys, title=title, xlabel=xlabel,
+def generate_key_occurence_line():
+    lineData = collectLines()
+    x = lineData[0]
+    ys = lineData[1]
+    title = "How Term Frequency Changes Over Time"
+    xlabel = "Date"
+    ylabel = "Count"
+    legend = searchedTerms
+    lines = linePlot(x, ys, title=title, xlabel=xlabel,
                  ylabel=ylabel, legend=legend)
 
 ##### KEY TERM OCCURENCE BAR GRAPH #####
-barData = collectCountBars()
-x = barData[0]
-y = barData[1]
-title = "Term Frequency"
-xlabel = "Term"
-ylabel = "Count"
-barPlot(barData[0], barData[1], title=title, xlabel=xlabel, ylabel=ylabel)
+def generate_key_occurence_bar():
+    barData = collectCountBars()
+    x = barData[0]
+    y = barData[1]
+    title = "Term Frequency"
+    xlabel = "Term"
+    ylabel = "Count"
+    barPlot(barData[0], barData[1], title=title, xlabel=xlabel, ylabel=ylabel)
 
 ########## TOP ARTICLE WORDS TABLE ##########
-file = open("top_article_words.csv", "w")
-pmcId = "PMC2973834"
-for pmcId in articleWordCounts:
-    print("\n" + pmcId + ":")
-    topWords = articleWordTable(pmcId=pmcId)
-    file.write(pmcId+ ":\n")
-    for w in topWords:
-        print(w)
-        file.write(str(w[0]) + "," + str(w[1]) + "\n")
-file.close()
-
+def generate_word_table():
+    file = open("top_article_words.csv", "w")
+    pmcId = "PMC2973834"
+    for pmcId in articleWordCounts:
+        print("\n" + pmcId + ":")
+        topWords = articleWordTable(pmcId=pmcId)
+        file.write(pmcId+ ":\n")
+        for w in topWords:
+            print(w)
+            file.write(str(w[0]) + "," + str(w[1]) + "\n")
+    file.close()
 
 ########## SENTENCE WORDS MULTI BAR PLOT ##########
-xs = []
-ys = []
-subtitles = []
-title = "Terms Found in the Same Sentence as Key Terms"
-xlabel = "Sentence Terms"
-ylabel = "Occurrences"
-file = open("top_sentence_words_per_term.txt", "w")
-termIndex = 0
-for term in searchedTerms[8:12]:
-    termTitle = term[0]
-    if len(term)>0:
-        termTitle += term[1:]
-    subtitles.append(termTitle)
-    xs.append([])
-    ys.append([])
-    sentenceWords = sentenceWordTable(term, n=25)
-    file.write("\n" + term + ": \n")
-    for wordData in sentenceWords:
-        xs[termIndex].append(wordData[0])
-        if xs[termIndex][len(xs[termIndex]) - 1] == None:
-            xs[termIndex][len(xs[termIndex]) - 1] = "*No Occurences Found*"
-        ys[termIndex].append(wordData[1])
-        # print str(wordData[0]) + ": " + str(wordData[1])
-        file.write(str(wordData[0]) + ": " + str(wordData[1]) + "\n")
-    termIndex += 1
-file.close()
-multiBarPlot(xs, ys, 2, 2, title=title, subtitles=subtitles, xlabel=xlabel, ylabel=ylabel, fontSize=16)
+def generate_sentence_words_multi_bar():
+    xs = []
+    ys = []
+    subtitles = []
+    title = "Terms Found in the Same Sentence as Key Terms"
+    xlabel = "Sentence Terms"
+    ylabel = "Occurrences"
+    file = open("top_sentence_words_per_term.txt", "w")
+    termIndex = 0
+    for term in searchedTerms[8:12]:
+        termTitle = term[0]
+        if len(term)>0:
+            termTitle += term[1:]
+        subtitles.append(termTitle)
+        xs.append([])
+        ys.append([])
+        sentenceWords = sentenceWordTable(term, n=25)
+        file.write("\n" + term + ": \n")
+        for wordData in sentenceWords:
+            xs[termIndex].append(wordData[0])
+            if xs[termIndex][len(xs[termIndex]) - 1] == None:
+                xs[termIndex][len(xs[termIndex]) - 1] = "*No Occurences Found*"
+            ys[termIndex].append(wordData[1])
+            # print str(wordData[0]) + ": " + str(wordData[1])
+            file.write(str(wordData[0]) + ": " + str(wordData[1]) + "\n")
+        termIndex += 1
+    file.close()
+    multiBarPlot(xs, ys, 2, 2, title=title, subtitles=subtitles, xlabel=xlabel, ylabel=ylabel, fontSize=16)
 
 
 ########## OVERALL WORDS BAR GRAPH ###########
-x = []
-y = []
-file = open("top_words_overall.txt", "w")
-topWords = overallTopWordsTable(n=25)
-first = True
-for w in topWords:
-    print("\n'" + w[0] + "'" + ": " + str(w[1]))
-    file.write(w[0] + ": " + str(w[1]) + "\n")
-    x.append(w[0])
-    y.append(w[1])
+def generate_overall_words_bar():
+    x = []
+    y = []
+    file = open("top_words_overall.txt", "w")
+    topWords = overallTopWordsTable(n=25)
+    first = True
+    for w in topWords:
+        print("\n'" + w[0] + "'" + ": " + str(w[1]))
+        file.write(w[0] + ": " + str(w[1]) + "\n")
+        x.append(w[0])
+        y.append(w[1])
 
-title = "Overall Word Count"
-xlabel = "Term"
-ylabel = "Count"
-barPlot(x, y, title=title, xlabel=xlabel, ylabel=ylabel)
+    title = "Overall Word Count"
+    xlabel = "Term"
+    ylabel = "Count"
+    barPlot(x, y, title=title, xlabel=xlabel, ylabel=ylabel)

@@ -10,6 +10,7 @@ matplotlib = "*"
 keras = "*"
 pdfminer = "*"
 xlsxwriter = "*"
+pathlib = "*"
 
 [requires]
 python_version = "3.6"
