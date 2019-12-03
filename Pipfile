@@ -11,6 +11,9 @@ keras = "*"
 pdfminer = "*"
 xlsxwriter = "*"
 pathlib = "*"
+jupyter = "*"
+plotly = "*"
+ipywidgets = "*"
 
 [requires]
 python_version = "3.6"
