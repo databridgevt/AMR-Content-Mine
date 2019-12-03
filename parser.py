@@ -25,180 +25,17 @@ searchedTerms = ["one health", "one medicine", "animal", "human", "environment",
 
 # Create Locks for global data structures in order to prevent race conditions
 data_lock = multiprocessing.Lock()
-
-data = {
-    "termCounts": {
-        "one health": 0,
-        "one medicine": 0,
-        "animal": 0,
-        "human": 0,
-        "environment": 0,
-        "ecosystem": 0,
-        "ecohealth": 0,
-        "antimicrobial resistance": 0,
-        "antibiotic resistance": 0,
-        "drug resistance": 0,
-        "multidrug resistance": 0,
-        "resistance": 0,
-        "AMR": 0,
-        "ARB": 0,
-        "AR": 0,
-        "MDR": 0,
-        "dairy": 0,
-        "cow": 0, 
-        "beef": 0, 
-        "cattle": 0, 
-        "poultry": 0, 
-        "swine": 0, 
-        "chicken": 0, 
-        "pig": 0, 
-        "turkey": 0, 
-        "fish": 0, 
-        "porcine": 0, 
-        "bovine": 0, 
-        "soil": 0, 
-        "agriculture": 0,
-        "wastewater": 0, 
-        "pharmaceutical": 0, 
-        "drinking water": 0, 
-        "groundwater": 0, 
-        "surface water": 0, 
-        "compost": 0, 
-        "manure": 0, 
-        "biosolids": 0, 
-        "aquaculture": 0
-    },
-    "sentenceWordCounts": {
-        "one health": {},
-        "one medicine": {},
-        "animal": {},
-        "human": {},
-        "environment": {},
-        "ecosystem": {},
-        "ecohealth": {},
-        "antimicrobial resistance": {},
-        "antibiotic resistance": {},
-        "drug resistance": {},
-        "multidrug resistance": {},
-        "resistance": {},
-        "AMR": {},
-        "ARB": {},
-        "AR": {},
-        "MDR": {},
-        "dairy": {},
-        "cow": {}, 
-        "beef": {}, 
-        "cattle": {}, 
-        "poultry": {}, 
-        "swine": {}, 
-        "chicken": {}, 
-        "pig": {}, 
-        "turkey": {}, 
-        "fish": {}, 
-        "porcine": {}, 
-        "bovine": {}, 
-        "soil": {}, 
-        "agriculture": {},
-        "wastewater": {}, 
-        "pharmaceutical": {}, 
-        "drinking water": {}, 
-        "groundwater": {}, 
-        "surface water": {}, 
-        "compost": {}, 
-        "manure": {}, 
-        "biosolids": {}, 
-        "aquaculture": {}
-    },
-    "termJournalNames": {
-        "one health": {},
-        "one medicine": {},
-        "animal": {},
-        "human": {},
-        "environment": {},
-        "ecosystem": {},
-        "ecohealth": {},
-        "antimicrobial resistance": {},
-        "antibiotic resistance": {},
-        "drug resistance": {},
-        "multidrug resistance": {},
-        "resistance": {},
-        "AMR": {},
-        "ARB": {},
-        "AR": {},
-        "MDR": {},
-        "dairy": {},
-        "cow": {}, 
-        "beef": {}, 
-        "cattle": {}, 
-        "poultry": {}, 
-        "swine": {}, 
-        "chicken": {}, 
-        "pig": {}, 
-        "turkey": {}, 
-        "fish": {}, 
-        "porcine": {}, 
-        "bovine": {}, 
-        "soil": {}, 
-        "agriculture": {},
-        "wastewater": {}, 
-        "pharmaceutical": {}, 
-        "drinking water": {}, 
-        "groundwater": {}, 
-        "surface water": {}, 
-        "compost": {}, 
-        "manure": {}, 
-        "biosolids": {}, 
-        "aquaculture": {}
-    },
-    "termYears": {
-        "one health": {},
-        "one medicine": {},
-        "animal": {},
-        "human": {},
-        "environment": {},
-        "ecosystem": {},
-        "ecohealth": {},
-        "antimicrobial resistance": {},
-        "antibiotic resistance": {},
-        "drug resistance": {},
-        "multidrug resistance": {},
-        "resistance": {},
-        "AMR": {},
-        "ARB": {},
-        "AR": {},
-        "MDR": {},
-        "dairy": {},
-        "cow": {}, 
-        "beef": {}, 
-        "cattle": {}, 
-        "poultry": {}, 
-        "swine": {}, 
-        "chicken": {}, 
-        "pig": {}, 
-        "turkey": {}, 
-        "fish": {}, 
-        "porcine": {}, 
-        "bovine": {}, 
-        "soil": {}, 
-        "agriculture": {},
-        "wastewater": {}, 
-        "pharmaceutical": {}, 
-        "drinking water": {}, 
-        "groundwater": {}, 
-        "surface water": {}, 
-        "compost": {}, 
-        "manure": {}, 
-        "biosolids": {}, 
-        "aquaculture": {}
-    }
-}
-
 articleWordCounts_lock = multiprocessing.Lock()
 overallWords_lock = multiprocessing.Lock()
+
+# Load in a JSON object to contain word counts and relevent data
+aggregate_json = json.load('aggregate_data.json')
+
 
 articleWordCounts = {}
 overallWords = {}
 ignoredWords = []
+
 file = open("ignoredWords.txt", "r")
 for line in file:
     if len(line) > 1:
@@ -214,17 +51,12 @@ def time():
 
 def printData(key, term=None):
     print("\n========== PRINTING DATA " + key.upper() + "==========")
-    for termVal in list(data[key]):
+    for termVal in list(aggregate_json[key]):
         if term == None or term == termVal:
-            print("\n" + termVal + ": " + str(data[key][termVal]))
+            print("\n" + termVal + ": " + str(aggregate_json[key][termVal]))
 
     print("\n========== DONE ==========")
 
-
-# lastSentenceWord = None
-# check = False
-# compoundWordChecks = ["one", "antibiotic",
-#   "drug", "antimicrobial", "multidrug"]
 
 def countSentenceWords(sentence, term):
     lastSentenceWord = None
@@ -247,8 +79,8 @@ def countSentenceWords(sentence, term):
             elif lastSentenceWord == "multidrug" and word == "resistance":
                 word = lastSentenceWord + " " + word
             else:
-                if lastSentenceWord in data["sentenceWordCounts"][term].keys():
-                    data["sentenceWordCounts"][term][lastSentenceWord] += 1
+                if lastSentenceWord in aggregate_json["sentenceWordCounts"][term].keys():
+                    aggregate_json["sentenceWordCounts"][term][lastSentenceWord] += 1
                 else:
                     data["sentenceWordCounts"][term][lastSentenceWord] = 1
         if word in compoundWordChecks:
@@ -263,8 +95,8 @@ def countSentenceWords(sentence, term):
             continue
         while word[-1] == "." or word[-1] == "\n":
             word = word[:-1]
-        if word in data["sentenceWordCounts"][term].keys():
-            data["sentenceWordCounts"][term][word] += 1
+        if word in aggregate_json["sentenceWordCounts"][term].keys():
+            aggregate_json["sentenceWordCounts"][term][word] += 1
         else:
             data["sentenceWordCounts"][term][word] = 1
 
@@ -427,28 +259,28 @@ def updateData(pdf_path):
             for term in searchedTerms:
                 compoundCheck = firstWord in searchedTerms
                 if word == term.lower():
-                    data["termCounts"][term] += 1
+                    aggregate_json["termCounts"][term] += 1
                     differenceInData["termCountsPerArticle"][term] += 1
                     if firstWord in searchedTerms:
-                        data["termCounts"][firstWord] -= 1
+                        aggregate_json["termCounts"][firstWord] -= 1
                         differenceInData["termCountsPerArticle"][term] -= 1
                     with open(pdf_path.parent.joinpath('eupmc_result.json')) as json_file:
                         jsonData = json.load(json_file)
                         year = str(jsonData["journalInfo"][0]["printPublicationDate"][0]).lower().split("-")[0]
                         title = str(
                             jsonData["journalInfo"][0]["journal"][0]["title"][0]).lower()
-                        if title in data["termJournalNames"][term].keys():
-                            data["termJournalNames"][term][title] += 1
+                        if title in aggregate_json["termJournalNames"][term].keys():
+                            aggregate_json["termJournalNames"][term][title] += 1
                         else:
                             data["termJournalNames"][term][title] = 1
                         if compoundCheck:
-                            data["termJournalNames"][firstWord][title] -= 1
-                        if year in data["termYears"][term].keys():
-                            data["termYears"][term][year] += 1
+                            aggregate_json["termJournalNames"][firstWord][title] -= 1
+                        if year in aggregate_json["termYears"][term].keys():
+                            aggregate_json["termYears"][term][year] += 1
                         else:
-                            data["termYears"][term][year] = 1
+                            aggregate_json["termYears"][term][year] = 1
                         if compoundCheck:
-                            data["termYears"][term][year] -= 1
+                            aggregate_json["termYears"][term][year] -= 1
                     break
     data_lock.release()
     file.close()
@@ -478,7 +310,7 @@ def process_one(file_path):
     subprocess.call(process_command, shell=True)
     updateData(file_path)
 
-    print(data)
+    print(aggregate_json)
 
     #? Do we need the rest of this function?
 
