@@ -51,7 +51,6 @@ def build_dict_list(paths: list) -> list:
     return dict_list
 
 
-
 def get_results_list() -> list:
     """ Returns a list of Paths of JSON results
     """
@@ -60,8 +59,12 @@ def get_results_list() -> list:
 
 def init_worksheet():
     """ Initialize a workbook in the current directory """
+    
     workbook = xlsxwriter.Workbook('Ams_Aggregate_Workbook.xlsx')
     
+    # I want to store t=our data in 2 separate worksheets.
+    # One to store data purely in the PMCs downloaded
+    # Another to Store Word Counts
     pmc_sheet = workbook.add_worksheet()
     word_count_sheet = workbook.add_worksheet()
 
@@ -75,15 +78,9 @@ def init_worksheet():
     pmc_sheet.write(0, 5, 'Date Published')
     pmc_sheet.write()
 
-
     # Word Count Headers --------------------------------------------
 
-
     return workbook
-
-    
-
-
 
 # Main ------------------------------------------------------------------------
 
@@ -101,10 +98,4 @@ if __name__ == "__main__":
     # It might be better to ony keep one dict in memory at a time,
     # at the cost of many smaller/spread out IO operations
     paths = None
-    
-
-
-
-
-
     
