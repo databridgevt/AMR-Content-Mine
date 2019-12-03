@@ -23,15 +23,16 @@ searchedTerms = ["one health", "one medicine", "animal", "human", "environment",
                  "cow", "beef", "cattle", "poultry", "swine", "chicken", "pig", "turkey", "fish", "porcine", "bovine", "soil", "agriculture",
                  "wastewater", "pharmaceutical", "drinking water", "groundwater", "surface water", "compost", "manure", "biosolids", "aquaculture"]
 
+
 # Create Locks for global data structures in order to prevent race conditions
 data_lock = multiprocessing.Lock()
 articleWordCounts_lock = multiprocessing.Lock()
 overallWords_lock = multiprocessing.Lock()
+differenceInData_lock = multiprocessing.Lock()
 
 # Load in a JSON object to contain word counts and relevent data
 aggregate_json = json.load('aggregate_data.json')
-
-
+differenceInData = json.load('difference.json')
 articleWordCounts = {}
 overallWords = {}
 ignoredWords = []
@@ -112,53 +113,7 @@ def isLastWord(word, length, space, newline):
             lastWord = True
     return lastWord
 
-# updateData updates the data global array within itself for countTerms and associated helping functions
 
-differenceInData_lock = multiprocessing.Lock()
-
-differenceInData = {
-        "termCountsPerArticle": {
-        "one health": 0,
-        "one medicine": 0,
-        "animal": 0,
-        "human": 0,
-        "environment": 0,
-        "ecosystem": 0,
-        "ecohealth": 0,
-        "antimicrobial resistance": 0,
-        "antibiotic resistance": 0,
-        "drug resistance": 0,
-        "multidrug resistance": 0,
-        "resistance": 0,
-        "AMR": 0,
-        "ARB": 0,
-        "AR": 0,
-        "MDR": 0,
-        "dairy": 0,
-        "cow": 0, 
-        "beef": 0, 
-        "cattle": 0, 
-        "poultry": 0, 
-        "swine": 0, 
-        "chicken": 0, 
-        "pig": 0, 
-        "turkey": 0, 
-        "fish": 0, 
-        "porcine": 0, 
-        "bovine": 0, 
-        "soil": 0, 
-        "agriculture": 0,
-        "wastewater": 0, 
-        "pharmaceutical": 0, 
-        "drinking water": 0, 
-        "groundwater": 0, 
-        "surface water": 0, 
-        "compost": 0, 
-        "manure": 0, 
-        "biosolids": 0, 
-        "aquaculture": 0
-    }
-}
 
 def resetDifference():
     differenceInData_lock.acquire()
@@ -169,6 +124,7 @@ def resetDifference():
     differenceInData_lock.release()
     
 
+# updateData updates the data global array within itself for countTerms and associated helping functions
 def updateData(pdf_path):
     
     pmcId = pdf_path.parent.name
