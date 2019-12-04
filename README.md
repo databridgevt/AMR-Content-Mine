@@ -49,7 +49,7 @@ I should note, the `-g` switch tells npm that you want to install this package g
 There's now a `pipenv` for this project. This 'virtual environment' should make sure that everyone is using the same versions for our dependencies. To install `pipenv`, use `pip3 install --user pipenv`. Then to run the script, use:
 
 ```bash
-pipenv run ./parser.py
+pipenv run src/parser.py
 ```
 
 #### Alternative
@@ -57,7 +57,7 @@ pipenv run ./parser.py
 This script should support running straight from the command line. Just try,
 
 ```bash
-./parser.py
+src/parser.py
 ```
 
 If you get an error saying `ImportError: No module named module_name` then install that module using `sudo pip install module_name`.
