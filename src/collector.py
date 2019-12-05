@@ -70,8 +70,8 @@ def init_worksheet():
     # I want to store t=our data in 2 separate worksheets.
     # One to store data purely in the PMCs downloaded
     # Another to Store Word Counts
-    pmc_sheet = workbook.add_worksheet()
-    word_count_sheet = workbook.add_worksheet()
+    pmc_sheet = workbook.add_worksheet('PMC Data')
+    word_count_sheet = workbook.add_worksheet('Word Counts')
 
     # PMC Headers ---------------------------------------------------
 
