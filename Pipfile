@@ -11,8 +11,6 @@ keras = "*"
 pdfminer = "*"
 xlsxwriter = "*"
 pathlib = "*"
-jupyter = "*"
-plotly = "*"
 ipywidgets = "*"
 progressbar2 = "*"
 
