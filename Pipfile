@@ -10,8 +10,6 @@ matplotlib = "*"
 keras = "*"
 pdfminer = "*"
 xlsxwriter = "*"
-pathlib = "*"
-ipywidgets = "*"
 progressbar2 = "*"
 
 [requires]
