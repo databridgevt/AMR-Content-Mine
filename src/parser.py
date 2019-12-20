@@ -2,12 +2,8 @@
 
 import multiprocessing
 from pathlib import Path
-import pdfminer
 import subprocess
 import sys
-import json
-import keras
-import progressbar
 
 # Yeah, I'm not the best at naming sometimes
 from searched_terms import searched_terms
@@ -41,14 +37,6 @@ def process_one(file_path: Path) -> None:
 
     subprocess.call(process_command, shell=True)
 
-    # ? Do we need the rest of this function?
-
-    # Load a result .json in the same directory as the corresponding
-    # fulltext.pdf
-    #with open(file_path.parent.joinpath("eupmc_result.json")) as json_file2:
-    #    specificData = json.load(json_file2)
-
-
 def process_all() -> None:
     """ Uses Process Pool to Process all PDFs
 
@@ -58,12 +46,12 @@ def process_all() -> None:
 
     """
 
-    # Get a Path Object of the current directory
-    current_dir = Path.cwd()
+    # Get a Path Object of the AMS directory
+    ams_dir = Path(pdfDirectoryPath)
 
-    # Use pathlib to glob all PDFs from ./AmsContainer
+    # Use pathlib to glob all PDFs from pdfDirectoryPath
     # '**' recursively matches all subdirectories
-    pdfs = list(current_dir.glob('AmsContainer-test/**/fulltext.pdf'))
+    pdfs = list(ams_dir.glob('**/fulltext.pdf'))
 
     print('Found {} PDFs'.format(len(pdfs)))
 
@@ -84,12 +72,9 @@ def process_all() -> None:
     pool.close()
     pool.join()
 
-    # Write All Data to a file for parsing later
-    #with open('aggregate_results/difference_results.json', 'w') as diff_results_file:
-    #    json.dump(differenceInData, diff_results_file, indent = 2)
-    #with open('aggregate_results/aggregate_results.json', 'w') as agg_results_file:
-    #    json.dump(aggregate_json, agg_results_file, indent = 2)
-
 
 if __name__ == "__main__":
+    if len(sys.argv) == 2:
+        pdfDirectoryPath = sys.argv[1]
+
     process_all()
