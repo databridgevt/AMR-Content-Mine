@@ -29,13 +29,15 @@ def process_one(file_path: Path) -> None:
     # Build the command for processing a pdf. I get string concatenation,
     # But I think .format() is so much nicer when there's multiple arguments
 
-    process_command = "pdf2txt.py -o {to_output} {to_process}".format(
-        to_output=output_file_path.as_posix(),
-        to_process=file_path.as_posix())
+    # Skip if the output file already exists (pdf has already been processed)
+    if not output_file_path.exists():
+        process_command = "pdf2txt.py -o {to_output} {to_process}".format(
+            to_output=output_file_path.as_posix(),
+            to_process=file_path.as_posix())
 
-    print('[{}] Processing: {}'.format(os.getpid(), file_path.parent.name))
+        print('[{}] Processing: {}'.format(os.getpid(), file_path.parent.name))
 
-    subprocess.call(process_command, shell=True)
+        subprocess.call(process_command, shell=True)
 
 def process_all() -> None:
     """ Uses Process Pool to Process all PDFs
@@ -64,7 +66,7 @@ def process_all() -> None:
     # in groups of 30 to process.
     print('Beginning To Convert PDFs to plain text ...')
     
-    pool.map(process_one, pdfs, 10)
+    pool.map(process_one, pdfs, 4)
 
     print('Finished Converting PDF to plain text...')
 
