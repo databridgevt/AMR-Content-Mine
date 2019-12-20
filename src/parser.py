@@ -18,104 +18,6 @@ pdfDirectoryPath = "AmsContainer/"
 # Data Mining and Collection
 ##########################################
 
-# Create Locks for global data structures in order to prevent race conditions
-data_lock = multiprocessing.Lock()
-articleWordCounts_lock = multiprocessing.Lock()
-overallWords_lock = multiprocessing.Lock()
-differenceInData_lock = multiprocessing.Lock()
-
-# Load in a JSON object to contain word counts and relevent data
-with open('src/json/aggregate_data.json') as json_file:
-    aggregate_json = json.load(json_file)
-with open('src/json/difference.json') as json_file:
-    differenceInData = json.load(json_file)
-articleWordCounts = {}
-overallWords = {}
-ignoredWords = []
-
-file = open("ignoredWords.txt", "r")
-for line in file:
-    if len(line) > 1:
-        line = line[:-1]
-    ignoredWords.append(line)
-file.close()
-
-
-def printData(key, term=None):
-    print("\n========== PRINTING DATA " + key.upper() + "==========")
-    for termVal in list(aggregate_json[key]):
-        if term is None or term == termVal:
-            print("\n" + termVal + ": " + str(aggregate_json[key][termVal]))
-
-    print("\n========== DONE ==========")
-
-
-def countSentenceWords(sentence, term):
-    lastSentenceWord = None
-    check = False
-    compoundWordChecks = ["one", "antibiotic",
-                          "drug", "antimicrobial", "multidrug"]
-    words = sentence.split(" ")
-    for word in words:
-        if check:
-            if lastSentenceWord == "one" and word == "medicine":
-                word = lastSentenceWord + " " + word
-            elif lastSentenceWord == "antibiotic" and word == "resistance":
-                word = lastSentenceWord + " " + word
-            elif lastSentenceWord == "drug" and word == "resistance":
-                word = lastSentenceWord + " " + word
-            elif lastSentenceWord == "antimicrobial" and word == "resistance":
-                word = lastSentenceWord + " " + word
-            elif lastSentenceWord == "one" and word == "health":
-                word = lastSentenceWord + " " + word
-            elif lastSentenceWord == "multidrug" and word == "resistance":
-                word = lastSentenceWord + " " + word
-            else:
-                if lastSentenceWord in aggregate_json["sentenceWordCounts"][term].keys(
-                ):
-                    aggregate_json["sentenceWordCounts"][term][lastSentenceWord] += 1
-                else:
-                    aggregate_json["sentenceWordCounts"][term][lastSentenceWord] = 1
-        if word in compoundWordChecks:
-            check = True
-            lastSentenceWord = word
-            continue
-        else:
-            check = False
-            lastSentenceWord = None
-
-        if len(word) == 0 or word == " " or word == "\n":
-            continue
-        while word[-1] == "." or word[-1] == "\n":
-            word = word[:-1]
-        if word in aggregate_json["sentenceWordCounts"][term].keys():
-            aggregate_json["sentenceWordCounts"][term][word] += 1
-        else:
-            aggregate_json["sentenceWordCounts"][term][word] = 1
-
-
-def isLastWord(word, length, space, newline):
-    if (len(word) == 0 or word == " " or word == "\n"):
-        return False
-    lastWord = False
-    if word[-1] == ".":
-        lastWord = True
-    if len(word) > 1:
-        if word[-2:] == ".\n":
-            lastWord = True
-    return lastWord
-
-
-def resetDifference():
-    differenceInData_lock.acquire()
-
-    for terms in differenceInData["termCountsPerArticle"]:
-        differenceInData["termCountsPerArticle"][terms] = 0
-
-    differenceInData_lock.release()
-
-# updateData() moved to collector.py
-
 def process_one(file_path: Path) -> None:
     """ Process PDF at a given Path
 
@@ -138,7 +40,6 @@ def process_one(file_path: Path) -> None:
     print('Processing: {}'.format(file_path.as_posix()))
 
     subprocess.call(process_command, shell=True)
-    #updateData(file_path)
 
     # ? Do we need the rest of this function?
 
