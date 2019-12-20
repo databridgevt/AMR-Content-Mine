@@ -11,7 +11,7 @@ matplotlib = "*"
 keras = "*"
 pdfminer = "*"
 xlsxwriter = "*"
-progressbar2 = "*"
+nltk = "*"
 
 [requires]
 python_version = "3.6"

@@ -3,7 +3,7 @@
 import multiprocessing
 from pathlib import Path
 import subprocess
-import sys
+import sys, os
 
 # Yeah, I'm not the best at naming sometimes
 from searched_terms import searched_terms
@@ -33,7 +33,7 @@ def process_one(file_path: Path) -> None:
         to_output=output_file_path.as_posix(),
         to_process=file_path.as_posix())
 
-    print('Processing: {}'.format(file_path.as_posix()))
+    print('[{}] Processing: {}'.format(os.getpid(), file_path.parent.name))
 
     subprocess.call(process_command, shell=True)
 
