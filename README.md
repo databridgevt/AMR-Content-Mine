@@ -49,12 +49,14 @@ I should note, the `-g` switch tells npm that you want to install this package g
 There's now a `pipenv` for this project. This 'virtual environment' should make sure that everyone is using the same versions for our dependencies. To install `pipenv`, use `pip3 install --user pipenv`. Then to run the script, use:
 
 ```bash
+pipenv install
 pipenv run python src/parser.py
 ```
 
 Optionally, you can give the parser a single argument representing the path to a directory.
 
 ```bash
+pipenv install
 pipenv run python src/parser.py Path/To/Ams/Directory
 ```
 
