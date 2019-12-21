@@ -12,6 +12,13 @@ keras = "*"
 pdfminer = "*"
 xlsxwriter = "*"
 nltk = "*"
+jupyter = "*"
+seaborn = "*"
+plotly = "*"
+pandas = "*"
+numpy = "*"
+scipy = "*"
+apyori = "*"
 
 [requires]
 python_version = "3.6"
