@@ -19,6 +19,8 @@ pandas = "*"
 numpy = "*"
 scipy = "*"
 apyori = "*"
+networkx = "*"
+mlxtend = "*"
 
 [requires]
 python_version = "3.6"
