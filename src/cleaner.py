@@ -22,14 +22,82 @@ from nltk.stem import WordNetLemmatizer
 import sys
 from pathlib import Path
 import string
+import multiprocessing
 
 # Constants -------------------------------------------------------------------
 
-working_dir = Path('AmsContainer-test')
+working_dir = Path('AmsContainer')
 
 # Functions -------------------------------------------------------------------
 
+def clean_processed_text(text_path: Path):
+    """ Clean a single text file
 
+        This function uses the NLTK to clean up a file located at the
+        given path.
+
+        Currently, the changes made to the original file are:
+        1. All letters are made lowercase
+        2. All punctuation is removed
+        3. All [stopwords](https://gist.github.com/sebleier/554280) are removed
+        4. Text is lemmatized
+
+        Finally, the cleaned text is output into a file in the same directory
+        as the original text.
+
+        Parameters:
+        text_path (Path): A path to the file to be cleaned
+    """
+    with open(text_path, 'r') as text_file:
+        text = text_file.read()
+
+        # Convert uppercase to lowercase
+        text = text.lower()
+
+        # Potentially correct contractions here. Though, I expect
+        # few contractions in scientific papers.
+
+        # Remove punctuation from text
+        # 'maketrans' creates a table that maps
+        # (for our purposes) no characters to punctuation
+        # characters. This essentially removes all punctuation from a string.
+        # Plus, it's faster/more pythonic than regex.
+        # ? May want to include sentence terminators '.','?',';'
+        # ? To be used in chunking
+        text = text.translate(str.maketrans('', '', string.punctuation))
+
+        # Tokenize text.
+        # This converts the text into essentially, an array of smaller strings.
+        # In this case, we're mostly just splitting the text on
+        # whitespace.
+        tokens = word_tokenize(text)
+
+        # Remove stopwords from a text.
+        # Stop words are words like 'a', 'the', 'but'. These short, simple words
+        # don't really carry a lot of meaning in the greater text. So, we'll
+        # remove them to make smaller files/faster operations.
+        stop_words = set(stopwords.words('english'))
+
+        filtered_tokens = [word for word in tokens if word not in stop_words]
+
+        # Lemmatize the text.
+        # Lemmatization aims to turn words like 'talking' and 'talked' into 'talk'.
+        # We're trying to convert words into their simplest forms possible.
+        # Alternatively, we could have 'stemmed' words here instead of
+        # using lemmatization, but (to put it shortly) lemmatization always produces
+        # lexoconically correct words (you could find a word in a dictionary) where stemming
+        # may not.
+        lemmatizer = WordNetLemmatizer()
+
+        lemmatized_tokens = [lemmatizer.lemmatize(word) for word in filtered_tokens]
+
+        # Rebuild the tokens into a single string for writing
+        clean_text = ' '.join(lemmatized_tokens)
+
+        output_path = Path(text_path.parent).joinpath('cleaned_output.txt')
+
+        with open(output_path, 'w') as output_file:
+            output_file.write(clean_text)
 
 # Main ------------------------------------------------------------------------
 
@@ -40,54 +108,8 @@ if __name__ == "__main__":
     # Get a generator of all converted PDFs
     processed_texts_paths = working_dir.glob('./**/processed_output.txt')
 
-    for text_path in processed_texts_paths:
-        with open(text_path, 'r') as text_file:
-            text = text_file.read()
+    # Start up another process Pool
+    pool = multiprocessing.Pool()
 
-            # Convert uppercase to lowercase
-            text = text.lower()
-
-            # Potentially correct contractions here. Though, I expect
-            # few contractions in scientific papers.
-
-            # Remove punctuation from text
-            # 'maketrans' creates a table that maps
-            # (for our purposes) no characters to punctuation
-            # characters. This essentially removes all punctuation from a string.
-            # Plus, it's faster/more pythonic than regex.
-            # ? May want to include sentence terminators '.','?',';'
-            # ? To be used in chunking
-            text = text.translate(str.maketrans('', '', string.punctuation))
-
-            # Tokenize text.
-            # This converts the text into essentially, an array of smaller strings.
-            # In this case, we're mostly just splitting the text on
-            # whitespace.
-            tokens = word_tokenize(text)
-
-            # Remove stopwords from a text.
-            # Stop words are words like 'a', 'the', 'but'. These short, simple words
-            # don't really carry a lot of meaning in the greater text. So, we'll
-            # remove them to make smaller files/faster operations.
-            stop_words = set(stopwords.words('english'))
-
-            filtered_tokens = [word for word in tokens if word not in stop_words]
-
-            # Lemmatize the text.
-            # Lemmatization aims to turn words like 'talking' and 'talked' into 'talk'.
-            # We're trying to convert words into their simplest forms possible.
-            # Alternatively, we could have 'stemmed' words here instead of
-            # using lemmatization, but (to put it shortly) lemmatization always produces
-            # lexoconically correct words (you could find a word in a dictionary) where stemming
-            # may not.
-            lemmatizer = WordNetLemmatizer()
-
-            lemmatized_tokens = [lemmatizer.lemmatize(word) for word in filtered_tokens]
-
-            # Rebuild the tokens into a single string for writing
-            clean_text = ' '.join(lemmatized_tokens)
-
-            output_path = Path(text_path.parent).joinpath('cleaned_output.txt')
-
-            with open(output_path, 'w') as output_file:
-                output_file.write(clean_text)
+    # Process the texts found above
+    pool.map(clean_processed_text, processed_texts_paths, 5)
