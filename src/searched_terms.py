@@ -1,4 +1,3 @@
-
 searched_terms = [
     "one health",
     "one medicine",
@@ -38,4 +37,5 @@ searched_terms = [
     "compost",
     "manure",
     "biosolids",
-    "aquaculture"]
+    "aquaculture"
+    ]
