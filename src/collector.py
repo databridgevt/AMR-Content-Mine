@@ -2,17 +2,22 @@
 
 # Imports ---------------------------------------------------------------------
 
-from pathlib import Path
+import csv
 import json
-import xlsxwriter
+
+from nltk import ngrams
+from nltk.tokenize import word_tokenize
+
+from pathlib import Path
 from searched_terms import searched_terms
+import sys
 
 # Constants -------------------------------------------------------------------
 
-cwd = Path.cwd()
-working_directory = cwd.joinpath("AmsContainer-test") # ! Change Before real running
+WORKING_DIRECTORY = Path("AmsContainer")
 
 # Functions -------------------------------------------------------------------
+
 
 def load_result(result_path: Path) -> dict:
     """ Load a JSON file at the specified path
@@ -56,303 +61,109 @@ def build_dict_list(paths: list) -> list:
 
 
 def get_eupmc_results():
-    """ Returns a list of Paths of JSON results
+    """ Returns a generator of Paths of JSON results
     """
-    return working_directory.glob('**/eupmc_result.json')
+    return WORKING_DIRECTORY.glob('**/eupmc_result.json')
 
-
-def init_worksheet():
-    """ Initialize a workbook in the current directory 
+def get_cleaned_results():
+    """ Returns a generator of Paths to cleaned texts
     """
+    return WORKING_DIRECTORY.glob('**/cleaned_output.txt')
 
-    workbook = xlsxwriter.Workbook('Ams_Aggregate_Workbook.xlsx')
-
-    # I want to store t=our data in 2 separate worksheets.
-    # One to store data purely in the PMCs downloaded
-    # Another to Store Word Counts
-    pmc_sheet = workbook.add_worksheet('PMC Data')
-    word_count_sheet = workbook.add_worksheet('Word Counts')
-
-    # PMC Headers ---------------------------------------------------
-
-    pmc_sheet.write(0, 0, 'PMC ID')
-    pmc_sheet.write(0, 1, 'PM ID')
-    pmc_sheet.write(0, 2, 'Source')
-    pmc_sheet.write(0, 3, 'DOI')
-    pmc_sheet.write(0, 4, 'Title')
-    pmc_sheet.write(0, 5, 'Authors')
-    pmc_sheet.write(0, 6, 'Date Published')
-
-    # Word Count Headers --------------------------------------------
-    word_count_sheet.write(0, 0, 'PMC ID')
-
-    # Iterate over searched words and add each one to a header
-    for i, term in enumerate(searched_terms):
-        header_str = "{} Count".format(term)
-        # 0, 0 already contains PMC ID, so i+1
-        word_count_sheet.write(0, i+1, header_str)
-
-    write_pmc_data(pmc_sheet, word_count_sheet, None, None)
-
-    return (workbook, pmc_sheet, word_count_sheet)
-
-def write_pmc_data(pmc_sheet, word_count_sheet, agg_dict, diff_dict) -> None:
-    """ Find and Write Relevent PMC data 
-    """
-    # Write PMC book keeping data
-    for i, eupmc_result_path in enumerate(get_eupmc_results()):
-        with open(eupmc_result_path, 'r') as eumpc_result_file:
-            eumpc_result = json.load(eumpc_result_file)
-
-            # index 0 is the header, so i+1
-            try:
-                pmc_sheet.write(i + 1, 0, eumpc_result["pmcid"])
-                word_count_sheet.write(i + 1, 0, eumpc_result["pmcid"])
-            except:
-                pass # Fail quietly
-            try:
-                pmc_sheet.write(i + 1, 1, eumpc_result["pmid"])
-            except:
-                pass
-            try:
-                pmc_sheet.write(i + 1, 2, eumpc_result["source"])
-            except:
-                pass
-            try:
-                pmc_sheet.write(i + 1, 3, eumpc_result["doi"])
-            except:
-                pass
-            try:
-                pmc_sheet.write(i + 1, 4, eumpc_result["title"])
-            except:
-                pass
-            try:
-                pmc_sheet.write(i + 1, 5, eumpc_result["authorList"])
-            except:
-                pass
-            try:
-                pmc_sheet.write(i + 1, 6, eumpc_result["firstPublicationDate"])
-            except:
-                pass
-            
-    # Write 
-
-
-# Originally From parser.py --------------------------------------------------- 
-
-# Load in a JSON object to contain word counts and relevent data
-with open('src/json/aggregate_data.json') as json_file:
-    aggregate_json = json.load(json_file)
-with open('src/json/difference.json') as json_file:
-    differenceInData = json.load(json_file)
-articleWordCounts = {}
-overallWords = {}
-ignoredWords = []
-
-file = open("ignoredWords.txt", "r")
-for line in file:
-    if len(line) > 1:
-        line = line[:-1]
-    ignoredWords.append(line)
-file.close()
-
-def countSentenceWords(sentence, term):
-    lastSentenceWord = None
-    check = False
-    compoundWordChecks = ["one", "antibiotic",
-                          "drug", "antimicrobial", "multidrug"]
-    words = sentence.split(" ")
-    for word in words:
-        if check:
-            if lastSentenceWord == "one" and word == "medicine":
-                word = lastSentenceWord + " " + word
-            elif lastSentenceWord == "antibiotic" and word == "resistance":
-                word = lastSentenceWord + " " + word
-            elif lastSentenceWord == "drug" and word == "resistance":
-                word = lastSentenceWord + " " + word
-            elif lastSentenceWord == "antimicrobial" and word == "resistance":
-                word = lastSentenceWord + " " + word
-            elif lastSentenceWord == "one" and word == "health":
-                word = lastSentenceWord + " " + word
-            elif lastSentenceWord == "multidrug" and word == "resistance":
-                word = lastSentenceWord + " " + word
-            else:
-                if lastSentenceWord in aggregate_json["sentenceWordCounts"][term].keys(
-                ):
-                    aggregate_json["sentenceWordCounts"][term][lastSentenceWord] += 1
-                else:
-                    aggregate_json["sentenceWordCounts"][term][lastSentenceWord] = 1
-        if word in compoundWordChecks:
-            check = True
-            lastSentenceWord = word
-            continue
-        else:
-            check = False
-            lastSentenceWord = None
-
-        if len(word) == 0 or word == " " or word == "\n":
-            continue
-        while word[-1] == "." or word[-1] == "\n":
-            word = word[:-1]
-        if word in aggregate_json["sentenceWordCounts"][term].keys():
-            aggregate_json["sentenceWordCounts"][term][word] += 1
-        else:
-            aggregate_json["sentenceWordCounts"][term][word] = 1
-
-def isLastWord(word, length, space, newline):
-    if (len(word) == 0 or word == " " or word == "\n"):
-        return False
-    lastWord = False
-    if word[-1] == ".":
-        lastWord = True
-    if len(word) > 1:
-        if word[-2:] == ".\n":
-            lastWord = True
-    return lastWord
-
-
-def resetDifference():
-    for terms in differenceInData["termCountsPerArticle"]:
-        differenceInData["termCountsPerArticle"][terms] = 0
-
-# updateData updates the data global array within itself for countTerms
-# and associated helping functions
-def update_one_data(pdf_path: Path) -> None:
-    pmcId = pdf_path.parent.name
-
-    global articleWordCounts
-    articleWordCounts[pmcId] = {}
-    resetDifference()
-
-    # Getting the path for the correct output file
-    output_path = pdf_path.parent.joinpath("processed_output.txt")
-
-    with open(output_path, "r") as plain_text_file:
-        sentence = " "
-        sentenceComplete = False
-        compoundWordChecks = [
-            "one",
-            "antibiotic",
-            "drug",
-            "antimicrobial",
-            "multidrug",
-            'drinking',
-            'surface']
-        firstWord = None
-        check = False
-
-        for line in plain_text_file:
-
-            if (len(line) == 1):
-                continue
-            lineWords = line.split(" ")
-
-            for word in lineWords:
-
-                word = word.lower()
-                if "\n" in word:
-                    word = word[:-1]
-                if word in ignoredWords:
-                    continue
-                if (len(word) == 0 or word == " " or word == "\n"):
-                    continue
-                sentence = sentence + word + " "
-
-                while isLastWord(word, len(word), word == " ", word == "\n"):
-                    # Needs to match searchedTerm
-                    # print(sentence.split("."))
-                    sentence = sentence.split(".")[0] + " "
-                    for term in searched_terms:
-                        if " " + term.lower() + " " in sentence.lower():
-                            countSentenceWords(sentence, term)
-                    sentence = " "
-                    word = word.split(".")[1]
-
-                if word == "":
-                    continue
-                # Check for compound words
-                if check:
-                    articleWordCounts[pmcId][firstWord] -= 1
-                    overallWords[firstWord] -= 1
-                    if firstWord == "one" and word == "medicine":
-                        word = firstWord + " " + word
-                    elif firstWord == "antibiotic" and word == "resistance":
-                        word = firstWord + " " + word
-                    elif firstWord == "drug" and word == "resistance":
-                        word = firstWord + " " + word
-                    elif firstWord == "antimicrobial" and word == "resistance":
-                        word = firstWord + " " + word
-                    elif firstWord == "one" and word == "health":
-                        word = firstWord + " " + word
-                    elif firstWord == "multidrug" and word == "resistance":
-                        word = firstWord + " " + word
-                    elif firstWord == "drinking" and word == "water":
-                        word = firstWord + " " + word
-                    elif firstWord == "surface" and word == "water":
-                        word = firstWord + " " + word
-                if word in compoundWordChecks:
-                    check = True
-                    firstWord = word.lower()
-                else:
-                    check = False
-                    firstWord = None
-
-                if word in articleWordCounts[pmcId].keys():
-                    articleWordCounts[pmcId][word] += 1
-                else:
-                    articleWordCounts[pmcId][word] = 1
-
-                if word in overallWords.keys():
-                    overallWords[word] += 1
-                else:
-                    overallWords[word] = 1
-
-                for term in searched_terms:
-                    compoundCheck = firstWord in searched_terms
-                    if word == term.lower():
-                        aggregate_json["termCounts"][term] += 1
-                        differenceInData["termCountsPerArticle"][term] += 1
-                        if firstWord in searched_terms:
-                            aggregate_json["termCounts"][firstWord] -= 1
-                            differenceInData["termCountsPerArticle"][term] -= 1
-                        with open(pdf_path.parent.joinpath('eupmc_result.json')) as json_file:
-                            jsonData = json.load(json_file)
-                            year = str(
-                                jsonData["journalInfo"][0]["printPublicationDate"][0]).lower().split("-")[0]
-                            title = str(
-                                jsonData["journalInfo"][0]["journal"][0]["title"][0]).lower()
-                            if title in aggregate_json["termJournalNames"][term].keys(
-                            ):
-                                aggregate_json["termJournalNames"][term][title] += 1
-                            else:
-                                aggregate_json["termJournalNames"][term][title] = 1
-                            if compoundCheck:
-                                aggregate_json["termJournalNames"][firstWord][title] -= 1
-                            if year in aggregate_json["termYears"][term].keys():
-                                aggregate_json["termYears"][term][year] += 1
-                            else:
-                                aggregate_json["termYears"][term][year] = 1
-                            if compoundCheck:
-                                aggregate_json["termYears"][term][year] -= 1
-                        break
 
 # Main ------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    paths = get_eupmc_results()
-    for pdf_path in working_directory.glob('**/fulltext.pdf'):
-        update_one_data(pdf_path)
-    
+    if len(sys.argv) == 2:
+        WORKING_DIRECTORY = Path(sys.argv[1])
 
-    # ? Why do newlines get printed to the terminal as
-    # ? a character sequence instead of whitespace?
-    # ? It looks like json.dump() is escaping newlines
-    # print("Hello\nWorld\nHello\\nWorld")
-    # dump_result(result_paths[0])
-    json_dicts = build_dict_list(paths)
+    # Build tsv of eupmc results
+    with open('eupmc_results.tsv', 'w', newline='') as eupmc_results_tsv:
+        # Select eupmc field names to store in tsv
+        fields = [
+            'pmcid',
+            'pmid',
+            'doi',
+            'title',
+            'authorString',
+            'firstPublicationDate',
+            'source']
 
-    (workbook, pmc_sheet, word_count_sheet) = init_worksheet()
+        # Create writer object
+        eupmc_writer = csv.DictWriter(
+            eupmc_results_tsv,
+            fieldnames=fields,
+            restval='N/A',
+            extrasaction='ignore',
+            delimiter='\t')
 
-    write_pmc_data(pmc_sheet, word_count_sheet, aggregate_json, differenceInData)
+        eupmc_writer.writeheader()
 
-    workbook.close()
+        print('Processing EUPMC JSON results...')
+        paths = get_eupmc_results() # Get all paths of eupmc results
+        for eupmc_path in paths:
+            with open(eupmc_path, 'r') as eupmc_file:   # Open the file
+                eupmc_dict = json.load(eupmc_file)      # Load in the JSON
+                eupmc_writer.writerow(eupmc_dict)  # Write the JSON (loaded as a dict)
+                
+    #* Because almost every property in a eupmc_result.json is an array,
+    #* The dicts above all get written with a few more characters than necessary.
+    #* The following lines trim each field the the tsv
+    eupmc_rows = None
+    with open('eupmc_results.tsv', 'r') as eupmc_results_tsv:
+        eupmc_reader = csv.reader(eupmc_results_tsv, delimiter='\t')
+        eupmc_rows = list(eupmc_reader)
+    with open('eupmc_results.tsv', 'w') as eupmc_results_tsv:
+        eupmc_writer = csv.writer(eupmc_results_tsv, delimiter='\t')
+        eupmc_writer.writerow(eupmc_rows[0])
+        for row in eupmc_rows[1:]:
+            for i, column in enumerate(row):
+                row[i] = column[2:-2]
+            eupmc_writer.writerow(row)
+    eupmc_rows = None
+
+
+    # Build a csv for counting all search terms
+    with open('total_counts.csv', 'w', newline='') as total_counts_file:
+       
+        total_count_writer = csv.writer(total_counts_file)
+        # Write the header row
+        total_count_writer.writerow(['pmcid', *searched_terms])
+        
+        cleaned_paths = get_cleaned_results()
+        print('Counting Searched Terms in cleaned texts ...')
+        
+        for cleaned_path in cleaned_paths:
+            #Create a list with the PMCID and 0's for each search term            
+            local_counts = [cleaned_path.parent.name] + [0]*len(searched_terms)
+            
+            with open(cleaned_path, 'r') as cleaned_file:
+                cleaned_text = cleaned_file.read()
+                # Spilt the text into bigrams
+                bigrams = ngrams(word_tokenize(cleaned_text), 2)
+                # Concatenate each bigram tuple with a space (to match the search terms)
+                concated_bigrams = (' '.join(gram) for gram in bigrams)
+            
+                for gram in concated_bigrams:
+                    for i, term in enumerate(searched_terms):
+                        if term in gram:
+                            local_counts[i + 1] += 1
+
+            # This method double counts for unigram search terms
+            for i, term in enumerate(searched_terms):
+                if not ' ' in term:
+                    local_counts[i+1] //= 2
+                            
+            total_count_writer.writerow(local_counts)
+
+        # Use the counts found above to one-hot encode search term occurrence
+    with open('total_counts.csv', 'r', newline='') as total_counts_file:
+        with open('one_hot_counts.csv', 'w', newline='') as one_hot_file:
+            total_count_reader = csv.reader(total_counts_file)
+            one_hot_writer = csv.writer(one_hot_file)
+
+            next(total_count_reader) # Skip the first row
+            print('One Hot Encoding Searched Terms...')
+            for row in total_count_reader:
+                one_hot_count = [1 if int(value) > 0 else 0 for column in row[1:] for value in column]
+                one_hot_writer.writerow([row[0]] + one_hot_count)
