@@ -38,7 +38,9 @@ Download articles using the two following content mine commands:
 node --max_old_space_size=4000 $(which getpapers) -q '(TITLE:"One health" OR TITLE:"One medicine" OR TITLE:"Animal" OR TITLE:"human" OR TITLE:"environment" OR TITLE:"ecosystem" OR TITLE:"ecohealth") AND (TITLE:"Antimicrobial resistance" OR TITLE:"antibiotic resistance" OR TITLE:"drug resistance" OR TITLE:"multi-drug resistance" OR TITLE:"resistance" OR TITLE:"AMR" OR TITLE:"ABR" OR TITLE:"AR" OR TITLE:"MDR") NOT (TITLE:"herbicide" OR TITLE:"pesticide" OR TITLE:"disease resistance" OR TITLE:"fungicide")' -o AmsContainer -p -f AmsContentMineLog
 
 node --max_old_space_size=4000 $(which getpapers) -q '(ABSTRACT:"One health" OR ABSTRACT:"One medicine" OR ABSTRACT:"Animal" OR ABSTRACT:"human" OR ABSTRACT:"environment" OR ABSTRACT:"ecosystem" OR ABSTRACT:"ecohealth") AND (ABSTRACT:"Antimicrobial resistance" OR ABSTRACT:"antibiotic resistance" OR ABSTRACT:"drug resistance" OR ABSTRACT:"multi-drug resistance" OR ABSTRACT:"resistance" OR ABSTRACT:"AMR" OR ABSTRACT:"ABR" OR ABSTRACT:"AR" OR ABSTRACT:"MDR") NOT (ABSTRACT:"herbicide" OR ABSTRACT:"pesticide" OR ABSTRACT:"disease resistance" OR ABSTRACT:"fungicide")' -o AmsContainer -p -f AmsContentMineLog
-  ```
+
+node --max_old_space_size=4000 $(which getpapers) -q '((TITLE:"One health" OR TITLE:"One medicine" OR TITLE:“ecosystem” OR TITLE:“ecohealth” OR TITLE:”One AND Health” OR TITLE:”One AND Medicine” OR TITLE:"environment" OR TITLE:“animal AND human AND environment” OR TITLE:“Animal AND environment” OR TITLE:“Human AND environment” OR TITLE:”soil” OR TITLE:”agriculture” OR TITLE:”wastewater” OR TITLE:”drinking water” OR TITLE:”groundwater” OR TITLE:”surface water” OR TITLE:”compost” OR TITLE:”manure” OR TITLE:”biosolids” OR TITLE:”aquaculture” OR TITLE: "wastewater treatment”) AND (TITLE:"Antimicrobial resistance" OR TITLE:"antibiotic resistance" OR TITLE:"drug resistance" OR TITLE:"multi-drug resistance" OR TITLE:"resistance" OR TITLE:"AMR" OR TITLE:"ARB" OR TITLE:"AR" OR TITLE:"MDR") NOT (TITLE:"herbicide" OR TITLE:"pesticide" OR TITLE:"disease resistance" OR TITLE:"fungicide")) OR ((ABSTRACT:"One health" OR ABSTRACT:"One medicine" OR ABSTRACT:”ecosystem” OR ABSTRACT:”ecohealth” OR ABSTRACT:”One AND health” OR ABSTRACT:”One AND Medicine” OR ABSTRACT:”environment” OR ABSTRACT:“animal AND human AND environment” OR ABSTRACT:“Animal AND environment” OR ABSTRACT:“Human AND environment” OR ABSTRACT:”soil” OR ABSTRACT:”agriculture” OR ABSTRACT:”wastewater” OR ABSTRACT:”pharmaceutical” OR ABSTRACT:”drinking water” OR ABSTRACT:”groundwater” OR ABSTRACT:”surface water” OR ABSTRACT:”compost” OR ABSTRACT:”manure” OR ABSTRACT:”biosolids” OR ABSTRACT:”aquaculture” OR ABSTRACT:”wastewater treatment”) AND (ABSTRACT:"Antimicrobial resistance" OR ABSTRACT:"antibiotic resistance" OR ABSTRACT:"drug resistance" OR ABSTRACT:"multi-drug resistance" OR ABSTRACT:"resistance" OR ABSTRACT:"AMR" OR ABSTRACT:"ARB" OR ABSTRACT:"AR" OR ABSTRACT:"MDR") NOT (ABSTRACT:"herbicide" OR ABSTRACT:"pesticide" OR ABSTRACT:"disease resistance" OR ABSTRACT:"fungicide"))' -o AmsContainer -p -f AmsContentMineLog
+```
 
 I should note, the `-g` switch tells npm that you want to install this package globally. This may require `sudo` privileges.
 
@@ -69,3 +71,22 @@ src/parser.py
 ```
 
 If you get an error saying `ImportError: No module named module_name` then install that module using `sudo pip install module_name`.
+
+
+### Running the Cleaner
+
+To create some consistency across to newly processed plaintexts, we use python's [NLTK](https://nltk.org) to lemmatize the texts.
+
+To run the script, it's:
+
+```bash
+pipenv run python src/cleaner.py
+```
+
+### Running the Collector
+
+To collect the downloaded results into CSVs, the command is:
+
+```bash
+pipenv run python src/collector.py
+```
