@@ -5,8 +5,11 @@
 import csv
 import json
 
+import nltk
 from nltk import ngrams
 from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
+nltk.download('wordnet')
 
 from pathlib import Path
 from searched_terms import searched_terms
@@ -127,7 +130,16 @@ if __name__ == "__main__":
     
     # Build a csv for counting all search terms
     with open('Spreadsheets/total_counts.csv', 'w', newline='') as total_counts_file:
-       
+
+        # Lemmatize the searched terms
+        # This puts our searched terms through the same relevent cleaning as the cleaned texts
+        # Maximizing potential findings
+        lemmatizer = WordNetLemmatizer()
+        for i, term in enumerate(searched_terms):
+            # Split the given term on space then lemmatize the word and rejoin with a space
+            cleaned_words = ' '.join([lemmatizer.lemmatize(word) for word in term.lower().split(' ')])
+            searched_terms[i] = cleaned_words
+
         total_count_writer = csv.writer(total_counts_file)
         # Write the header row
         total_count_writer.writerow(['pmcid', *searched_terms])
