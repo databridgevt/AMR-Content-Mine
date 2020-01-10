@@ -170,14 +170,14 @@ if __name__ == "__main__":
                             
             total_count_writer.writerow(local_counts)
 
-        # Use the counts found above to one-hot encode search term occurrence
+    # Use the counts found above to one-hot encode search term occurrence
     with open('Spreadsheets/total_counts.csv', 'r', newline='') as total_counts_file:
         with open('Spreadsheets/one_hot_counts.csv', 'w', newline='') as one_hot_file:
             total_count_reader = csv.reader(total_counts_file)
             one_hot_writer = csv.writer(one_hot_file)
 
-            next(total_count_reader) # Skip the first row
             print('One Hot Encoding Searched Terms...')
+            one_hot_writer.writerow(next(total_count_reader)) # write headers
             for row in total_count_reader:
                 one_hot_count = [1 if int(column) > 0 else 0 for column in row[1:]]
                 one_hot_writer.writerow([row[0]] + one_hot_count)
