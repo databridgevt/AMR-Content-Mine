@@ -78,7 +78,7 @@ if __name__ == "__main__":
         WORKING_DIRECTORY = Path(sys.argv[1])
 
     # Build tsv of eupmc results
-    with open('eupmc_results.tsv', 'w', newline='') as eupmc_results_tsv:
+    with open('Spreadsheets/eupmc_results.tsv', 'w', newline='') as eupmc_results_tsv:
         # Select eupmc field names to store in tsv
         fields = [
             'pmcid',
@@ -87,7 +87,9 @@ if __name__ == "__main__":
             'title',
             'authorString',
             'firstPublicationDate',
-            'source']
+            'source',
+            'citedByCount',
+            ]
 
         # Create writer object
         eupmc_writer = csv.DictWriter(
@@ -110,10 +112,10 @@ if __name__ == "__main__":
     #* The dicts above all get written with a few more characters than necessary.
     #* The following lines trim each field the the tsv
     eupmc_rows = None
-    with open('eupmc_results.tsv', 'r') as eupmc_results_tsv:
+    with open('Spreadsheets/eupmc_results.tsv', 'r') as eupmc_results_tsv:
         eupmc_reader = csv.reader(eupmc_results_tsv, delimiter='\t')
         eupmc_rows = list(eupmc_reader)
-    with open('eupmc_results.tsv', 'w') as eupmc_results_tsv:
+    with open('Spreadsheets/eupmc_results.tsv', 'w') as eupmc_results_tsv:
         eupmc_writer = csv.writer(eupmc_results_tsv, delimiter='\t')
         eupmc_writer.writerow(eupmc_rows[0])
         for row in eupmc_rows[1:]:
@@ -122,16 +124,16 @@ if __name__ == "__main__":
             eupmc_writer.writerow(row)
     eupmc_rows = None
 
-
+    
     # Build a csv for counting all search terms
-    with open('total_counts.csv', 'w', newline='') as total_counts_file:
+    with open('Spreadsheets/total_counts.csv', 'w', newline='') as total_counts_file:
        
         total_count_writer = csv.writer(total_counts_file)
         # Write the header row
         total_count_writer.writerow(['pmcid', *searched_terms])
         
         cleaned_paths = get_cleaned_results()
-        print('Counting Searched Terms in cleaned texts ...')
+        print('Counting Searched Terms in cleaned texts...')
         
         for cleaned_path in cleaned_paths:
             #Create a list with the PMCID and 0's for each search term            
@@ -157,13 +159,13 @@ if __name__ == "__main__":
             total_count_writer.writerow(local_counts)
 
         # Use the counts found above to one-hot encode search term occurrence
-    with open('total_counts.csv', 'r', newline='') as total_counts_file:
-        with open('one_hot_counts.csv', 'w', newline='') as one_hot_file:
+    with open('Spreadsheets/total_counts.csv', 'r', newline='') as total_counts_file:
+        with open('Spreadsheets/one_hot_counts.csv', 'w', newline='') as one_hot_file:
             total_count_reader = csv.reader(total_counts_file)
             one_hot_writer = csv.writer(one_hot_file)
 
             next(total_count_reader) # Skip the first row
             print('One Hot Encoding Searched Terms...')
             for row in total_count_reader:
-                one_hot_count = [1 if int(value) > 0 else 0 for column in row[1:] for value in column]
+                one_hot_count = [1 if int(column) > 0 else 0 for column in row[1:]]
                 one_hot_writer.writerow([row[0]] + one_hot_count)
