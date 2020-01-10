@@ -5,9 +5,6 @@ from pathlib import Path
 import subprocess
 import sys, os
 
-# Yeah, I'm not the best at naming sometimes
-from searched_terms import searched_terms
-
 pdfDirectoryPath = "AmsContainer/"
 
 ##########################################
